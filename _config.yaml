@@ -1,5 +1,7 @@
 theme: jekyll-theme-minimal
 title: FP Castle
+description: Hacking Haskell in a Scottish Castle.
+logo: castle.jpg
 footer-links:
   github: fpcastle
   twitter: satnam6502
