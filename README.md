@@ -1,2 +1,2 @@
-# fpcastle.github.io
-Website source for FP Castle
+# FP Castle
+Hacking Haskell in a Scottish castle.
