@@ -1,4 +1,4 @@
-# FP Castle
+# Hacking Haskell in a Scottish castle
 At some point I hope to move back to Scotland to start a software company in a castle. We will specialize in using Haskell to write high quality code for discerning customers. Nobody is going to get rich, but a small number of us will have a lot of fun. I am always on the lookout for suitable castles to buy. Until then, here is a placeholder picture of the kind of castle I'd like to be my new HQ.
 
 ## FAQs
@@ -59,10 +59,7 @@ If you answered 1 then you can move onto the next stage of the interview process
 **A**: No, but we expect there will be many phantom types.
 
 **Q**: Will there be paper reading sessions?  
-**A**: Yes, in the ivory tower.  
-
-**Q**: How will Brexit effect hiring?  
-**A**: By then Scotland will have declared independence and rejoined the European Union.  
+**A**: Yes, in the ivory tower.   
 
 **Q**: Why?  
-**A**: Several large tech companies have their offices in the centre of London. This makes little sense to me. PHP coders are unlikely to have any meetings with customers. They won't be able to afford to live anywhere nice in central London so they will have a long commute into work. They could just as well write their PHP in any other part of the country. Perhaps some are diehard party animals that want the fast paced city life. However, in my experience, many software engineers would actually prefer to lead a life where they can live close to work and their children's school, travel by foot or bike and have a decent local primary school or high school nearby. We should create software company sites across the UK: not in London. I'm doing my bit by aspiring to create an 8 to 20 person company somewhere in the Scottish Highlands. Slàinte mhath!
+**A**: Several large tech companies have their offices in the centre of London. This makes little sense to me. PHP coders are unlikely to have any meetings with customers. They won't be able to afford to live anywhere nice in central London so they will have a long commute into work. They could just as well write their PHP in any other part of the country. Perhaps some are diehard party animals that want the fast paced city life. However, in my experience, many software engineers would actually prefer to lead a life where they can live close to work and their children's school, travel by foot or bike and have a decent local primary school or high school nearby. We should create software company sites across the UK: not in London. I'm doing my bit by aspiring to create an 8 to 20 person company somewhere in the Scottish Highlands. *Slàinte mhath*!
