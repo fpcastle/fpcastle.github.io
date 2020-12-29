@@ -31,7 +31,7 @@ At some point I hope to move back to Scotland to start a software company in a c
 
 **Q**: How do I know if I would be a good fit for FP Castle?  
 **A**: Which of the following two would you prefer?
-1. A [Functional Pearl](http://www.cs.ox.ac.uk/people/jeremy.gibbons/pearls/) in the [Journal of Functional Programming]9https://www.cambridge.org/core/journals/journal-of-functional-programming)?
+1. A [Functional Pearl](http://www.cs.ox.ac.uk/people/jeremy.gibbons/pearls/) in the [Journal of Functional Programming](https://www.cambridge.org/core/journals/journal-of-functional-programming)?
 2. A [PLDI](https://conf.researchr.org/series/pldi) paper with lots of graphs and charts and tables of numbers?
 
 If you answered 1 then you can move onto the next stage of the interview process which involves writing a functional pearl and sending us a link to a blog post about it for review by a selection committee chaired by Richard Bird. 
