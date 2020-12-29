@@ -5,7 +5,6 @@ At some point I hope to move back to Scotland to start a software company in a c
 **Q**: Will there be internet access?  
 **A**: Of course. We will arrange for one of Alphabet's [Loon project balloons](https://x.company/loon/) to be geostationary above our castle to provide us with a reliable internet connection which is impervious to the incompetence of regular cable-based internet providers or sabotage by marauding hordes of Python programmers.
 
-
 **Q**: Will there be a moat?  
 **A**: Yes, the moat will be an integral part of our security firewall. A company rowboat will ferry workers, customers and family members from the mainland shore to the castle complex. In the event of an attempted invasion by Java bureaucrats we can remotely deploy a virus that will shrink the size of their stack which will incur a stack overflow resulting in the attack boats sinking into the moat. The moat will be stocked with crocodiles to mop up the invaders.
 
@@ -71,7 +70,7 @@ If you answered 1 then you can move onto the next stage of the interview process
 **A**: Several large tech companies have their offices in the centre of London. This makes little sense to me. PHP coders are unlikely to have any meetings with customers. They won't be able to afford to live anywhere nice in central London so they will have a long commute into work. They could just as well write their PHP in any other part of the country. Perhaps some are diehard party animals that want the fast paced city life. However, in my experience, many software engineers would actually prefer to lead a life where they can live close to work and their children's school, travel by foot or bike and have a decent local primary school or high school nearby. We should create software company sites across the UK: not in London. I'm doing my bit by aspiring to create an 8 to 20 person company somewhere in the Scottish Highlands. *Slàinte mhath*!
 
 ## Members In Spirit
-Until I get FP Castle formally launched as a castle I am accepting "members in spirit". Please send me an email at [satnam@fpcastle.com](mailto:satnam@fpcastle.com) or tag me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list.
+Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please send me an email at [satnam@fpcastle.com](mailto:satnam@fpcastle.com) or tag me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list.
 
 * Simon Marlow
 * Satnam Singh
