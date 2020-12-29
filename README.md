@@ -37,6 +37,12 @@ At some point I hope to move back to Scotland to start a software company in a c
 
 If you answered 1 then you can move onto the next stage of the interview process which involves writing a functional pearl and sending us a link to a blog post about it for review by a selection committee chaired by Richard Bird. 
 
+**Q**: What is the bar to be hired as a Research Scientist?  
+**A**: You must have had at least one paper rejected from POPL, ICFP, PLDI or OOPSLA. If you paper was rejected by Reviewer #2 then your application will be fast-tracked.
+
+**Q**: Are Research Scientists subjected to a tenure-track process?  
+**A**: No, we do not haze our staff.
+
 **Q**: What text editor will be used?  
 **A**: That would be an ecumenical matter.
 
