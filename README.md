@@ -74,3 +74,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 
 * Simon Marlow
 * Satnam Singh
+
+## Discussion
+If you've got suggestions for how the FP Castle should be run please
+create a [discussion](https://github.com/fpcastle/fpcastle.github.io/discussions) on the GitHub page for FP Castle.
