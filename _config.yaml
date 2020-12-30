@@ -1,6 +1,7 @@
 theme: jekyll-theme-minimal
 title: FP Castle
 logo: castle.jpg
+google_analytics: 257361261
 footer-links:
   github: fpcastle
   twitter: satnam6502
