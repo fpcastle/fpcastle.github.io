@@ -7,3 +7,12 @@ footer-links:
   twitter: satnam6502
 plugins:
   - jekyll-seo-tag
+logo: castle.jpg
+twitter:
+  username: satnam6502
+  card: summary
+tagline: Hacking Haskell in a Scottish castle
+url: https://fpcastle.com
+author:
+  twitter: satnam6502
+
