@@ -5,3 +5,5 @@ google_analytics: G-FE5ZKRP2XF
 footer-links:
   github: fpcastle
   twitter: satnam6502
+plugins:
+  - jekyll-seo-tag
