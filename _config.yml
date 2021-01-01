@@ -1,1 +1,7 @@
-theme: jekyll-theme-hacker
+theme: jekyll-theme-minimal
+title: FP Castle
+logo: castle.jpg
+google_analytics: G-FE5ZKRP2XF
+footer-links:
+  github: fpcastle
+  twitter: satnam6502
