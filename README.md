@@ -85,6 +85,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Colin Carruthers
 * Francesco Cesarini
 * James Chapman
+* Benjamin Chetioui
 * Koen Claessen
 * Liam O'Connor
 * Justin Cormack
@@ -120,6 +121,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
 * Slim Lim
+* Sam Lindley
 * Andres Löh
 * Lorna Love
 * Peter Ludemann
