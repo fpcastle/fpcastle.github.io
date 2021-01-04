@@ -70,7 +70,7 @@ If you answered 1 then you can move onto the next stage of the interview process
 **A**: Several large tech companies have their offices in the centre of London. This makes little sense to me. PHP coders are unlikely to have any meetings with customers. They won't be able to afford to live anywhere nice in central London so they will have a long commute into work. They could just as well write their PHP in any other part of the country. Perhaps some are diehard party animals that want the fast paced city life. However, in my experience, many software engineers would actually prefer to lead a life where they can live close to work and their children's school, travel by foot or bike and have a decent local primary school or high school nearby. We should create software company sites across the UK: not in London. I'm doing my bit by aspiring to create an 8 to 20 person company somewhere in the Scottish Highlands. *Slàinte mhath*!
 
 ## Members In Spirit
-Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please send me an email at [satnam@fpcastle.com](mailto:satnam@fpcastle.com) or tag me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list.
+Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please tag me or DM me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list (please let me know your real name).
 
 * Simon Marlow
 * Satnam Singh
