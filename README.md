@@ -72,9 +72,11 @@ If you answered 1 then you can move onto the next stage of the interview process
 ## Members In Spirit
 Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please tag me or DM me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list (please let me know your real name).
 
+* Thorsten Altenkirch
 * Annette Bieniusa
 * Edwin Brady
 * Francesco Cesarini
+* Koen Claessen
 * Justin Cormack
 * Neil Ghani
 * Graham Hutton
