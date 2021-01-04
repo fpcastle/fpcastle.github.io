@@ -117,6 +117,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Edward Kmett
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
+* Slim Lim
 * Andres Löh
 * Lorna Love
 * Peter Ludemann
