@@ -127,6 +127,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Alex Moreno
 * Jan de Muijnck-Hughes
 * Palash Nigam
+* Rishiyur Nikhil
 * Matt Noonan
 * Dominic Orchard
 * Katie Ots
