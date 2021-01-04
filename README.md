@@ -120,6 +120,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Shriram Krishnamurthi
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
+* Yao Li
 * Slim Lim
 * Sam Lindley
 * Andres Löh
@@ -143,6 +144,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Katie Ots
 * Dan Piponi
 * Kushal Pisavadia
+* Nadia Polikarpova
 * Claire Quigley
 * Vaibhav Sagar
 * Armando Santos
