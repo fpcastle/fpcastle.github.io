@@ -81,6 +81,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Edwin Brady
 * Paul Brauner
 * Christopher Brown
+* Jose Calderon
 * Colin Carruthers
 * Francesco Cesarini
 * James Chapman
@@ -98,6 +99,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * John Hughes
 * Stephen A. Edwards
 * Martín Hötzel Escardó
+* Craig Ferguson
 * Pedro Furlanetto
 * Gautham Ganapathy
 * Dan Razvan Ghica
