@@ -103,6 +103,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dan Razvan Ghica
 * Matthías Páll Gissurarson
 * Neil Ghani
+* Jeremy Gibbons
 * Kathy Gray
 * Robert Grimm
 * Stefan Holdermans
