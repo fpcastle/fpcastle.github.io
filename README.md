@@ -101,6 +101,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Martín Hötzel Escardó
 * Craig Ferguson
 * Pedro Furlanetto
+* Ben Gamari
 * Gautham Ganapathy
 * Dan Razvan Ghica
 * Matthías Páll Gissurarson
@@ -115,6 +116,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Graham Hutton
 * Tracey Iwanczuk
 * Edward Kmett
+* Shriram Krishnamurthi
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
 * Slim Lim
@@ -132,6 +134,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Jan de Muijnck-Hughes
 * Palash Nigam
 * Rishiyur Nikhil
+* James Noble
 * Matt Noonan
 * Dominic Orchard
 * Katie Ots
