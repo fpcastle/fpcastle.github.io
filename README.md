@@ -74,6 +74,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 
 * Edwin Brady
 * Neil Ghani
+* Edward Kmett
 * Vilem-Benjamin Liepelt
 * Simon Marlow
 * Dominic Orchard
