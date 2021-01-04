@@ -124,7 +124,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Sam Lindley
 * Andres Löh
 * Lorna Love
-* Peter Ludemann
+* Peter Lüdemann
 * Tran Ma
 * Anil Madhavapeddy
 * Simon Marlow
