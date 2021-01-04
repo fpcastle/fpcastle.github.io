@@ -73,23 +73,68 @@ If you answered 1 then you can move onto the next stage of the interview process
 Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please tag me or DM me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list (please let me know your real name).
 
 * Thorsten Altenkirch
+* Moritz Angermann
+* Lennart Augustsson
+* Jonathan Balkind
+* Nick Benton
 * Annette Bieniusa
 * Edwin Brady
+* Christopher Brown
+* Colin Carruthers
 * Francesco Cesarini
+* James Chapman
 * Koen Claessen
 * Liam O'Connor
 * Justin Cormack
+* Stephen Creaney
+* Laurence E. Day
+* James Decker
+* Dusty DeWeese
+* Derek Dreyer
+* Joe Duffy
+* Kim Hamilton Duffy
+* John Hughes
+* Stephen A. Edwards
+* Martín Hötzel Escardó
+* Pedro Furlanetto
+* Gautham Ganapathy
+* Dan Razvan Ghica
+* Matthías Páll Gissurarson
 * Neil Ghani
+* Kathy Gray
+* Robert Grimm
+* Stefan Holdermans
+* Celeste Hollenbeck
+* Carsten Kehler Holst
 * Graham Hutton
+* Tracey Iwanczuk
 * Edward Kmett
+* Guy Lemieux
 * Vilem-Benjamin Liepelt
 * Andres Löh
+* Lorna Love
+* Peter Ludemann
+* Tran Ma
 * Simon Marlow
+* Erik Meijer
+* Kristopher Micinski
+* Neil Mitchell
+* Andy Adams-Moran
+* Alex Moreno
 * Jan de Muijnck-Hughes
+* Palash Nigam
+* Matt Noonan
 * Dominic Orchard
 * Katie Ots
+* Dan Piponi
+* Kushal Pisavadia
 * Vaibhav Sagar
 * Armando Santos
 * Mary Sheeran
+* Jeremy Siek
 * Satnam Singh
+* Marty Stumpf
+* Bernard Sufrin
 * Josef Svenningsson
+* John Wiegley
+* Uma Zalakain
