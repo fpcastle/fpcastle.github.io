@@ -77,6 +77,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Edwin Brady
 * Francesco Cesarini
 * Koen Claessen
+* Liam O'Connor
 * Justin Cormack
 * Neil Ghani
 * Graham Hutton
