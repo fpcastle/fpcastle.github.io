@@ -78,8 +78,10 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Graham Hutton
 * Edward Kmett
 * Vilem-Benjamin Liepelt
+* Andres Löh
 * Simon Marlow
 * Dominic Orchard
+* Vaibhav Sagar
 * Armando Santos
 * Satnam Singh
 * Josef Svenningsson
