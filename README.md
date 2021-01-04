@@ -79,6 +79,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Nick Benton
 * Annette Bieniusa
 * Edwin Brady
+* Paul Brauner
 * Christopher Brown
 * Colin Carruthers
 * Francesco Cesarini
@@ -116,6 +117,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Lorna Love
 * Peter Ludemann
 * Tran Ma
+* Anil Madhavapeddy
 * Simon Marlow
 * Erik Meijer
 * Kristopher Micinski
@@ -129,6 +131,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Katie Ots
 * Dan Piponi
 * Kushal Pisavadia
+* Claire Quigley
 * Vaibhav Sagar
 * Armando Santos
 * Mary Sheeran
