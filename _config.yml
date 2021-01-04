@@ -9,10 +9,9 @@ plugins:
 logo: castle.jpg
 twitter:
   username: satnam6502
-  card: summary
+  card: summary_large_image
 image: castle.jpg
 tagline: Hacking Haskell in a Scottish castle
 url: https://fpcastle.com
 author:
   twitter: satnam6502
-
