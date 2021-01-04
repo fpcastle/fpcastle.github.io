@@ -138,6 +138,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Rishiyur Nikhil
 * James Noble
 * Matt Noonan
+* Cyrus Omar
 * Dominic Orchard
 * Katie Ots
 * Dan Piponi
