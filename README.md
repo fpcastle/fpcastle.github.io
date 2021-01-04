@@ -80,6 +80,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Vilem-Benjamin Liepelt
 * Andres Löh
 * Simon Marlow
+* Jan de Muijnck-Hughes
 * Dominic Orchard
 * Vaibhav Sagar
 * Armando Santos
