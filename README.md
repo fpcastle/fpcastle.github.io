@@ -133,6 +133,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Erik Meijer
 * Kristopher Micinski
 * Neil Mitchell
+* Andrey Mokhov
 * Andy Adams-Moran
 * Alex Moreno
 * Jan de Muijnck-Hughes
