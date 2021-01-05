@@ -121,6 +121,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Matthías Páll Gissurarson
 * Neil Ghani
 * Jeremy Gibbons
+* Harry Goldstein
 * Kathy Gray
 * Tim Griffin
 * Robert Grimm
@@ -150,6 +151,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Erik Meijer
 * Kristopher Micinski
 * Neil Mitchell
+* Jeff Mogul
 * Andrey Mokhov
 * Andy Adams-Moran
 * Alex Moreno
