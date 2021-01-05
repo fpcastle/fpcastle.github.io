@@ -82,6 +82,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Lennart Augustsson
 * Jonathan Balkind
 * Nick Benton
+* Satish Bhatti
 * Annette Bieniusa
 * Ben Blaxill
 * Nikolaj Bjorner
@@ -190,6 +191,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Claire Quigley
 * Salar Rahmanian
 * Erik Riedel
+* Claudio Russo
 * Paweł Sączawa
 * Vaibhav Sagar
 * Armando Santos
