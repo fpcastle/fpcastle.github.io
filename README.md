@@ -72,6 +72,7 @@ If you answered 1 then you can move onto the next stage of the interview process
 ## Members In Spirit
 Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please tag me or DM me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list (please let me know your real name).
 
+* Özgür Akgün
 * Thorsten Altenkirch
 * Moritz Angermann
 * Lennart Augustsson
@@ -82,6 +83,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Paul Brauner
 * Christopher Brown
 * Jose Calderon
+* Jacques Carette
 * Colin Carruthers
 * Francesco Cesarini
 * James Chapman
@@ -94,17 +96,22 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Laurence E. Day
 * James Decker
 * Dusty DeWeese
+* Thomas Dickerson
 * Derek Dreyer
+* Eli T. Drumm
+* Thomas M. DuBuisson
 * Joe Duffy
 * Kim Hamilton Duffy
 * John Hughes
 * Stephen A. Edwards
 * Martín Hötzel Escardó
 * Craig Ferguson
+* Miki Fossati
 * Pedro Furlanetto
 * Ben Gamari
 * Gautham Ganapathy
 * Dan Razvan Ghica
+* Christian Gill
 * Matthías Páll Gissurarson
 * Neil Ghani
 * Jeremy Gibbons
@@ -116,6 +123,8 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Carsten Kehler Holst
 * Graham Hutton
 * Tracey Iwanczuk
+* Ohad Kammar
+* Michał Kawalec
 * Edward Kmett
 * Shriram Krishnamurthi
 * Clemens Kupke
@@ -145,12 +154,17 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Cyrus Omar
 * Dominic Orchard
 * Katie Ots
+* Artem Pelenitsyn
 * Dan Piponi
 * Kushal Pisavadia
 * Nadia Polikarpova
 * Claire Quigley
+* Salar Rahmanian
+* Erik Riedel
 * Vaibhav Sagar
 * Armando Santos
+* Alejandro Serrano
+* Cheng Shao
 * Mary Sheeran
 * Jeremy Siek
 * Satnam Singh
@@ -162,3 +176,4 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Phil Trinder
 * John Wiegley
 * Uma Zalakain
+* Nuda “Tony” Zhang
