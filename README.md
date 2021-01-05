@@ -87,6 +87,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Nikolaj Bjorner
 * Edwin Brady
 * Paul Brauner
+* Joachim Breitner
 * James Brock
 * Christopher Brown
 * Guim Caballero
@@ -108,6 +109,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dusty DeWeese
 * Thomas Dickerson
 * Alex Dixon
+* sNathan van Doorn
 * Derek Dreyer
 * Eli T. Drumm
 * Thomas M. DuBuisson
@@ -120,6 +122,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Stephen A. Edwards
 * Martín Hötzel Escardó
 * Craig Ferguson
+* Alcides Fonseca
 * Miki Fossati
 * Nate Foster
 * Pedro Furlanetto
@@ -144,6 +147,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Michael B James
 * Ohad Kammar
 * Michał Kawalec
+* J Kenneth King
 * Edward Kmett
 * Matthew Kolosick
 * Shriram Krishnamurthi
