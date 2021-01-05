@@ -75,8 +75,9 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Justus Adam
 * Özgür Akgün
 * Thorsten Altenkirch
-* Owen Arden
 * Moritz Angermann
+* Owen Arden
+* Julian Arni
 * Lennart Augustsson
 * Jonathan Balkind
 * Nick Benton
@@ -104,6 +105,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Thomas M. DuBuisson
 * Joe Duffy
 * Kim Hamilton Duffy
+* Ricardo Herrmann
 * John Hughes
 * Stephen A. Edwards
 * Martín Hötzel Escardó
@@ -131,6 +133,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Edward Kmett
 * Shriram Krishnamurthi
 * Clemens Kupke
+* Ben Laurie
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
 * Yao Li
@@ -162,6 +165,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dan Piponi
 * Kushal Pisavadia
 * Nadia Polikarpova
+* Sumera Priyadarsini
 * Claire Quigley
 * Salar Rahmanian
 * Erik Riedel
@@ -179,9 +183,11 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Marty Stumpf
 * Bernard Sufrin
 * Josef Svenningsson
+* Jesse Tov
 * Phil Trinder
 * Stephanie Weirich
 * John Wiegley
 * Uma Zalakain
 * Steve Zdancewic
+* Irene Yoon
 * Nuda “Tony” Zhang
