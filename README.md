@@ -170,6 +170,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dan Piponi
 * Kushal Pisavadia
 * Nadia Polikarpova
+* Nick Pollard
 * Sumera Priyadarsini
 * Claire Quigley
 * Salar Rahmanian
