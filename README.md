@@ -74,7 +74,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 
 * Özgür Akgün
 * Thorsten Altenkirch
-* Add Owen Arden
+* Owen Arden
 * Moritz Angermann
 * Lennart Augustsson
 * Jonathan Balkind
