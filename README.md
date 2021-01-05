@@ -112,6 +112,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Martín Hötzel Escardó
 * Craig Ferguson
 * Miki Fossati
+* Nate Foster
 * Pedro Furlanetto
 * Cheryl Gach
 * Ben Gamari
