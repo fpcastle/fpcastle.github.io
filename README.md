@@ -180,6 +180,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Bernard Sufrin
 * Josef Svenningsson
 * Phil Trinder
+* Stephanie Weirich
 * John Wiegley
 * Uma Zalakain
 * Nuda “Tony” Zhang
