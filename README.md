@@ -86,6 +86,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Paul Brauner
 * Christopher Brown
 * Jose Calderon
+* Harold Carr
 * Jacques Carette
 * Colin Carruthers
 * Francesco Cesarini
