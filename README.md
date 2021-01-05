@@ -135,6 +135,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Andy Adams-Moran
 * Alex Moreno
 * Jan de Muijnck-Hughes
+* Rolf Neugebauer
 * Palash Nigam
 * Rishiyur Nikhil
 * James Noble
