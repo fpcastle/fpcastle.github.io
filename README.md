@@ -183,4 +183,5 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Stephanie Weirich
 * John Wiegley
 * Uma Zalakain
+* Steve Zdancewic
 * Nuda “Tony” Zhang
