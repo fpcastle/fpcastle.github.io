@@ -103,6 +103,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Derek Dreyer
 * Eli T. Drumm
 * Thomas M. DuBuisson
+* Ian Duncan
 * Joe Duffy
 * Kim Hamilton Duffy
 * Ricardo Herrmann
