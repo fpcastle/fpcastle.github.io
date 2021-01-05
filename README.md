@@ -110,6 +110,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Craig Ferguson
 * Miki Fossati
 * Pedro Furlanetto
+* Cheryl Gach
 * Ben Gamari
 * Gautham Ganapathy
 * Dan Razvan Ghica
@@ -139,6 +140,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Lorna Love
 * Peter Lüdemann
 * Tran Ma
+* Tinks Macdonald
 * Anil Madhavapeddy
 * Simon Marlow
 * Erik Meijer
@@ -171,6 +173,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Jeremy Siek
 * Satnam Singh
 * Kartik Singhal
+* Susan Spence
 * Don Stewart
 * Alley Stoughton
 * Marty Stumpf
