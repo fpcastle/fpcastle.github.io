@@ -82,6 +82,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Jonathan Balkind
 * Nick Benton
 * Annette Bieniusa
+* Nikolaj Bjorner
 * Edwin Brady
 * Paul Brauner
 * Christopher Brown
@@ -189,6 +190,8 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Marty Stumpf
 * Bernard Sufrin
 * Josef Svenningsson
+* Peter Thiemann
+* Marie-Luce Torres
 * Jesse Tov
 * Phil Trinder
 * Stephanie Weirich
