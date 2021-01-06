@@ -155,6 +155,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Matthew Kolosick
 * Shriram Krishnamurthi
 * Clemens Kupke
+* Markus Läll
 * Ben Laurie
 * Guy Lemieux
 * Vilem-Benjamin Liepelt
