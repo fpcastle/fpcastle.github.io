@@ -137,6 +137,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Matthías Páll Gissurarson
 * Neil Ghani
 * Jeremy Gibbons
+* Andy Gill
 * Harry Goldstein
 * Sebastian Graf
 * Kathy Gray
