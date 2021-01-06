@@ -121,6 +121,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Ricardo Herrmann
 * John Hughes
 * Stephen A. Edwards
+* Eric Eide
 * Martín Hötzel Escardó
 * Craig Ferguson
 * Alcides Fonseca
