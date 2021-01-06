@@ -174,6 +174,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Andrey Mokhov
 * Andy Adams-Moran
 * Alex Moreno
+* Greg Morrisett
 * Jan de Muijnck-Hughes
 * Rolf Neugebauer
 * Palash Nigam
