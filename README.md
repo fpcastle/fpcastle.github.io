@@ -132,6 +132,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Gautham Ganapathy
 * Dan Razvan Ghica
 * Christian Gill
+* David "Dai" Girardo
 * Matthías Páll Gissurarson
 * Neil Ghani
 * Jeremy Gibbons
