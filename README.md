@@ -124,6 +124,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Kim Hamilton Duffy
 * Gareth Edwards
 * Kirill Elagin
+* Sam Elliott
 * Ricardo Herrmann
 * John Hughes
 * Stephen A. Edwards
