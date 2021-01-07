@@ -145,14 +145,17 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Kathy Gray
 * Tim Griffin
 * Robert Grimm
+* Joshua Grosso
 * Finn Espen Gundersen
 * Stefan Holdermans
 * Celeste Hollenbeck
 * Carsten Kehler Holst
+* YL Huang
 * Graham Hutton
 * Samin Ishtiaq
 * Tracey Iwanczuk
 * Michael B James
+* Michal Janočko
 * Ingars Jekabsons
 * Ohad Kammar
 * Michał Kawalec
