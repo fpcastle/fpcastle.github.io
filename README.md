@@ -80,6 +80,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Moritz Angermann
 * Owen Arden
 * Julian Arni
+* Aslan Askarov
 * Lennart Augustsson
 * Jonathan Balkind
 * Nick Benton
