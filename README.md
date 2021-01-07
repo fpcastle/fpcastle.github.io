@@ -91,6 +91,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Paul Brauner
 * Joachim Breitner
 * James Brock
+* Alex Brown
 * Christopher Brown
 * Guim Caballero
 * Jose Calderon
@@ -111,6 +112,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * James Decker
 * Dusty DeWeese
 * Thomas Dickerson
+* Lucas Dicioccio
 * Alex Dixon
 * sNathan van Doorn
 * Derek Dreyer
@@ -119,6 +121,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Ian Duncan
 * Joe Duffy
 * Kim Hamilton Duffy
+* Gareth Edwards
 * Kirill Elagin
 * Ricardo Herrmann
 * John Hughes
