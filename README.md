@@ -75,6 +75,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Justus Adam
 * Ali Ahmed
 * Özgür Akgün
+* Maximilian Algehed
 * Thorsten Altenkirch
 * Moritz Angermann
 * Owen Arden
