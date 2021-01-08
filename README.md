@@ -107,6 +107,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Benjamin Chetioui
 * Koen Claessen
 * Liam O'Connor
+* Ezra Cooper
 * Justin Cormack
 * Stephen Creaney
 * Joe Cutler
@@ -234,6 +235,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Marty Stumpf
 * Bernard Sufrin
 * Josef Svenningsson
+* Alexander Thiemann
 * Peter Thiemann
 * Marie-Luce Torres
 * Jesse Tov
