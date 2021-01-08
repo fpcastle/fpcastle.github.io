@@ -164,6 +164,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Michael B James
 * Michal Janočko
 * Ingars Jekabsons
+* Simon Peyton Jones
 * Ohad Kammar
 * Michał Kawalec
 * J Kenneth King
