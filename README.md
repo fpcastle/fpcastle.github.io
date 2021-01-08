@@ -84,6 +84,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Lennart Augustsson
 * Jonathan Balkind
 * Nick Benton
+* Siddharth Bhat
 * Satish Bhatti
 * Annette Bieniusa
 * Ben Blaxill
@@ -203,6 +204,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Cyrus Omar
 * Dominic Orchard
 * Katie Ots
+* Qais Patankar
 * Artem Pelenitsyn
 * Dan Piponi
 * Kushal Pisavadia
@@ -243,4 +245,3 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Irene Yoon
 * Nuda “Tony” Zhang
 * Beta Ziliani
-* Qais Patankar
