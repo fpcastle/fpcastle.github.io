@@ -238,6 +238,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Marie-Luce Torres
 * Jesse Tov
 * Phil Trinder
+* Pedro Vasconcelos
 * Dimitrios Vytiniotis
 * Stephanie Weirich
 * John Wiegley
