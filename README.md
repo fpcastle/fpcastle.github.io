@@ -79,6 +79,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Thorsten Altenkirch
 * Moritz Angermann
 * Owen Arden
+* Daniil Archangelsky
 * Julian Arni
 * Aslan Askarov
 * Lennart Augustsson
@@ -192,6 +193,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Anil Madhavapeddy
 * Simon Marlow
 * Erik Meijer
+* Simon Michael
 * Kristopher Micinski
 * Neil Mitchell
 * Jeff Mogul
@@ -209,6 +211,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dominic Orchard
 * Katie Ots
 * Qais Patankar
+* Hila Peleg
 * Artem Pelenitsyn
 * Dan Piponi
 * Kushal Pisavadia
