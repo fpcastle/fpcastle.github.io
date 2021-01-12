@@ -26,7 +26,7 @@ Satnam has previously worked on topics including functional programming, hardwar
 Satnam was an early team member of the [Kubernetes](https://kubernetes.io) project. Satnam has also
 held academic positions at The University of Glasgow and The University of Birmingham as well as
 visiting and adjuct positions elsewhere (Imperial College London and the University of Washington).
-Satnam's professional duties include having been an elected member of [ACM SIGPLAN](https://www.sigplan.org/) executive committee (until 2018), [IFIP WG2.8](http://www.cs.ox.ac.uk/ralf.hinze/WG2.8) on functional programming and
+Satnam's professional duties include having been an elected member of the [ACM SIGPLAN](https://www.sigplan.org/) executive committee (until 2018), [IFIP WG2.8](http://www.cs.ox.ac.uk/ralf.hinze/WG2.8) on functional programming and
 [IFIP WG2.11](https://wiki.hh.se/wg211/index.php/Main_Page) on program generation.
 
 # Cava Talk Title
