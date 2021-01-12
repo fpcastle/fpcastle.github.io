@@ -34,7 +34,8 @@ Satnam's professional duties include having been an elected member of [ACM SIGPL
 *Satnam Singh, Google Research. satnam@google.com*
 
 This talk describes the specification, implementation and formal
-verification inside the [Coq](https://coq.inria.fr) theorem prover of the AES crypto accelerator component of the
+verification inside the [Coq](https://coq.inria.fr) theorem prover of the
+[AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) crypto accelerator component of the
 [OpenTitan](https://opentitan.org) silicon roof of trust. The approach
 we take is inspired by [Adam Chlipala](http://adam.chlipala.net) in his book
 [Certified Programming with Dependent Types](http://adam.chlipala.net/cpdt/).
@@ -44,10 +45,10 @@ which is designed to help describe low level data-path style circuits with a vie
 to having tight control over resource utilization and performance. This allows
 us to specify, implement and formally verify high assurance systems in one model
 where specifications are plain Gallina functions that specify the desired
-behaviour of a hardware component. Our system can extract circuit descriptions
+behaviour of hardware components. Our system can extract circuit descriptions
 from our Coq DSL to SystemVerilog for implementation on FPGA circuits.
 
-We are also planning on building on this work to also tackle co-design of
+We are also planning on building on this work to also tackle the co-design of
 software and hardware where we extract both C code (or RISC-V machine code)
 and SystemVerilog and a register or bus-interface so we can reason about
-the end-to-end behaviour of a systems comprising hardware *and* software.
+the end-to-end behaviour of a system comprising hardware *and* software.
