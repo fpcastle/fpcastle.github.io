@@ -4,11 +4,34 @@ title: Lava
 ---
 # Lava
 
+* [A Hardware Description Language in Haskell](#a-hardware-sescription-language-in-haskell)
+* [Layout in Lava](#layout-in-lava)
+* [An Adder Example](#an-adder-example)
+* [An Adder Tree in Lava](#an-adder-tree-in-lava)
+* [A Sorter Example in Lava](#a-sorter-example-in-lava)
+* [A 1D Systolic Finite Impulse Response Filter](#a-1d-systolic-finite-impulse-response-filter)
+* [A Constant Coefficient Multiplier Core in Lava](#a-constant-coefficient-multiplier-core-in-lava)
+* [Xilinx Lava Tutorials](#xilinx-lava-tutorials)
+
 ## A Hardware Description Language in Haskell
-Lava is an experimental system design to aid the digital design of circuits by providing a powerful library for composing structural circuit descriptions. Lava is designed to help specify the layout of circuits which can improve performance and reduce area utilization.
+I started developing Lava around 1998 when I worked at Xilinx to help produce FPGA circuits that were more compact and high performance that could practically
+achieved using the standard design flow based on VHDL or Verilog. Lava provided higher order combinators for composing both circuit functionality **and** layout
+*simultaneously*. This made it tractable for a hardware design engineer to communicate their intuitions about what would lead to a good floorplan by expressing
+it using techniques based on [functional geometry](https://dl.acm.org/doi/10.1145/800068.802148). The first paper about this work was
+[Lava: hardware design in Haskell](https://dl.acm.org/doi/10.1145/289423.289440) published in 1998.
+
+Lava is realized as an embedded domain specific language in Haskell for composing structural circuit descriptions. It designed to be used for data-path style
+structural circuit descriptions i.e. a bottom-up construction of circuits. Lava is not appropriate for circuits that require things like synthesis of finite-state machines from
+high level descriptions. However, the Lava circuit combinator library does provide high level tools for making certain kinds of low level circuit design more productive.
+
 This page describes an old version of Lava that was used to produce efficient FPGA circuits with compact layout.
-The following pages give a flavor of the Lava HDL and how it can be used to describe circuits for implementation of Xilinx's Virtex family of FPGAs. These pages assume a good understanding of Xilinx's Virtex FPGA architecture and of the Haskell lazy functional programming language. The number of people that know about both can easily fit inside a medium sized elevator. So it may be useful to read A Gentle Introduction to Haskell if you are unfamiliar with functional programming languages. Information about Xilinx's FPGA can be found at
-[http://www.xilinx.com]([http://www.xilinx.com). A detailed set of Lava tutorials are also available.
+Here I give a flavor of the Lava HDL and how it can be used to describe circuits for implementation of Xilinx's Virtex family of FPGAs (now quite old!). These pages assume a good understanding of Xilinx's Virtex FPGA architecture and of the Haskell lazy functional programming language. The work on Lava and its many variants was done in collaboration with several people including
+[Mary Sheeran](http://www.cse.chalmers.se/~ms/) and [Koen Claessen](http://www.cse.chalmers.se/~koen/) at Chalmers University of Technology. A much more recent version of Lava has been
+produced by [Andy Gill](https://eecs.ku.edu/andy-gill)'s team called [Kansas Lava](https://ku-fpg.github.io/software/kansas-lava).
+
+I've switched to doing similar kinds of circuit design using a Lava-like DSL embedded in the [Coq](https://coq.inria.fr) theorem prover which
+allows us to prove properties about our circuits and have machine checked proofs about the laws of combinator compositional.
+We call this system Cava (Coq + Lava) which is produced as part of the [Silver Oak](https://github.com/project-oak/oak-hardware) project at Google Research.
 
 ## Describing Netlists in Lava
 
@@ -372,7 +395,290 @@ Without the RLOCs the following implementation is produced:
 
 The adder tree layout was easy to express in Lava and has produced significant performance advantages. Many other tree layout schemes can be easily explored in Lava. It is also very easy to make trees of other kinds of circuits like multiplier etc. All one has to do is to supply such circuits to the first argument of the `tree` combinator.
 
-## A Constant Coefficient Multiplier (KCM) Core in Lava
+## A Sorter Example in Lava
+
+### Sorting with Butterfly Networks
+
+This section describes how to build a sorter circuit using butterfly networks which are carefully placed to ensure high performance. The sorter circuit is made by recursively merging the results of sub-sorts. A top-level schematic of the circuit that we present in this section is shown below. The merger that we present is bitonic which requires the first half of the input list to be increasing and the second half decreasing (or vice versa). The result of the top sorter is reversed to accommodate this requirement.
+
+<p align="center"> <img src="sorter_view1.jpg"></p>
+
+### Batcher's Bitonic Merger
+
+Given the ability to sort two numbers and the diagram above we have a recursive formula for making sorters of any size. First the availability of a two sorter is assumed and the merger is designed. Then the implementation of the two sorter is given.
+
+A merger called Batcher's Bitonic Merger can be made by using a butterfly of two sorters. Here is an example of a specific butterfly network of two sorters (written as 2S) which merges eight numbers:
+
+<p align="center"> <img src="bfly3_two_sorter.jpg"></p>
+
+To help describe such butterfly networks in Lava a few useful circuit combinators are introduced.
+From the top level description we see that a reverse operation is required and we can simply use the built in Haskell `reverse` function:
+
+<p align="center"> <img src="reverse.jpg"></p>
+
+Another very useful wiring combinator is called `riffle` and an instance of it is shown below:
+
+<p align="center"> <img src="riffle.jpg"></p>
+
+This wiring combinator interleaves the odd and even elements of the input list (shown on the left). It can be defined in Lava as:
+
+```haskell
+riffle = halve >-> ziP -> unpair
+```
+
+The halve function splits a list into two halves which are returned in a two element tuple. The `ziP` combinator takes a pair of lists and returns a new list of pairs by associating each element in the first list with the corresponding element in the second list. The unpair function then flattens this list of pairs into a list.
+
+It is also useful to be able to perform the inverse function of riffle called `unriffle`. This circuit can be thought of as the reflection of the riffle circuit along a vertical axis as shown below.
+
+<p align="center"> <img src="unriffle.jpg"></p>
+
+The definition of `unriffle` in Lava is given below.
+
+```haskell
+unriffle = pair >-> unzip >-> unhalve
+```
+
+Sometimes a bus containing n elements is processed by using two copies of a circuit such that the first copy of the circuit operates on the bottom half of the input and the second copy of the circuit operates on the top half of the input as shown below for a four input bus:
+
+<p align="center"> <img src="two.jpg"></p>
+
+The combinator that performs this task is called `two` and is easily defined in Lava:
+
+```haskell
+two r = halve >-> par [r,r] >-> unhalve
+```
+
+Note that this combinator placed the first copy of `r` below the second copy of `r`. A specific instance of this combinator is two `two_sorter` which is shown below:
+
+<p align="center"> <img src="two_sorter.jpg"></p>
+
+Another combining form that uses two copies of the same circuit is `ilv` (pronounced "interleave"). This combinator has the property that the bottom circuit processes the inputs at even positions and the top circuit processes the inputs at the odd positions. An instance of `ilv R` for an eight input bus is shown below.
+
+<p align="center"> <img src="ilv.jpg"></p>
+
+The `ilv` combinator can be defined by noticing the it is the composition of an `unriffle`, `two R` and `riffle`:
+
+```haskell
+ilv r = unriffle >=> two r >=> riffle
+```
+
+The evens combinator chops the input list into pairs and then applies copies of the same circuit to each input. The argument circuit for evens must be a pair to pair circuit. An instance of `evens two_sorter` over an eight input list is shown below.
+
+<p align="center"> <img src="evens_two_sorter.jpg"></p>
+
+This combinator is defined as:
+
+```haskell
+evens f = chop 2 >-> maP f >-> concat
+```
+
+Using the combinators shown above we can now describe a butterfly network of some circuit `r` (such that `r` is a pair to pair circuit):
+
+```haskell
+bfly r 1 = r
+bfly r n = ilv (bfly r (n-1)) >-> evens r 
+```
+
+Here is a picture of `bfly r 1`:
+
+<p align="center"> <img src="bfly1.jpg"></p>
+
+This makes sense in the case of a two sorter since a butterfly of size 1 has 2 inputs which can be sorted by a single two sorter. The layout for `bfly r 2` is:
+
+<p align="center"> <img src="bfly2.jpg"></p>
+
+The left hand side of this picture shows an interleave of `R` and the right hand side shows `evens R`. The layout for `bfly r 3` is:
+
+<p align="center"> <img src="bfly3.jpg"></p>
+
+Note that a sub-butterfly of size 2 has been identified with a pale background. It can be instructive to unfold the `bfly r 3` expression and then try and spot where the various combinators occur in the picture.
+
+```haskell
+bfly r 3 
+  = ilv (bfly r 2)) >-> evens r 
+  = ilv (ilv r >-> evens r) >-> evens r
+```
+
+To make a merger all we need to do is to instance this butterfly with a two sorter. Here is a picture of `bfly r two_sorter` (also shown before):
+
+<p align="center"> <img src="bfly3_two_sorter.jpg"></p>
+
+This solves the right hand side of the sorter architecture since `bfly two_sorter` makes a bitonic merger:
+
+<p align="center"> <img src="sorter_view2.jpg"></p>
+
+The two remaining sorters can be recursively decomposed using exactly the same technique used to decompose the top level sorter. For example, the upper sorter can be implemented by using a merger (shown on the right) and then sorting the two sub-lists. Since each sub-list contains just two elements we get to the base case of the recursion and deploy a two sorter.
+
+<p align="center"> <img src="sorter_view3.jpg"></p>
+
+But how is the merger realized? As before, it is just a butterfly of two sorters, in this case `bfly 2 two_sorter`:
+
+<p align="center"> <img src="sorter_view4.jpg"></p>
+
+Applying the same technique to the lower sorter gives the complete architecture for a size 3 sorter (i.e. 2^3 inputs = 8):
+
+<p align="center"> <img src="sorter_recursion.jpg"></p>
+
+Although it is not at all obvious this circuit sorts eight numbers it has been systematically derived from a simple procedure which can be codified in Lava as:
+
+```haskell
+sorter cmp 1 = cmp 
+sorter cmp n = two (sorter cmp (n-1)) >-> 
+               sndList reverse >-> bfly cmp n
+```
+
+This description says that a sorter of degree 1 (i.e. 2 inputs) can be made using a two sorter. A larger sorter is made by using two small sorters, then reversing the result of the upper sort, and then merging these sub-sorts using a butterfly of two sorters. Note that this sorter description is parameterized on the specific sorter to be used.
+
+An instance of `sorter two_sorter` produces a pipelined 8 input sorter which is shown below on a Virtex-II device:
+
+<p align="center"> <img src="sortb_3.jpg"></p>
+
+Note that since Lava combinators include layout as well as connectivity information the resulting circuit occupies a rectangular area which corresponds to the pictures shown above.
+
+A degree 4 (i.e. 16 inputs) sorter is shown below:
+
+<p align="center"> <img src="sortb_4.jpg"></p>
+
+A degree 5 (i.e. 32 inputs) sorter is shown below:
+
+<p align="center"> <img src="sortb_5.jpg"></p>
+
+A slightly larger version of the network above which sorts 32 16-bit numbers each clock tick operates at 165MHz on a XC2V3000 part with a latency of 14 clock ticks (using the 4.1i version of the Xilinx design tools). Larger data-sets can be sorted by storing numbers in BlockRAM and then iteratively sorting and merging. More details can be found in the paper
+[Design and Verification of a Sorter Core](https://dl.acm.org/doi/10.5555/646705.702175).
+
+Some instances of these butterfly networks were implemented on a XCV300 FPGA and ChipScope was used to verify that the real hardware actually did sort numbers:
+
+<p align="center"> <img src="chipscope_bfly.jpg"></p>
+
+## A 1D Systolic Finite Impulse Response Filter
+
+processing element of the systolic array. Then we show how this processing element can be replicated to form a filter. Note that there are many ways of designing such filters and this technique is not the best possible implementation on Xilinx's FPGA architectures. This example has been chosen to help illustrate how to describe systolic-style systems in Lava.
+NOTE: The filter implementations presented here are designed to illustrate aspects of Lava and are not the recommended implementations for Xilinx's FPGAs. Xilinx's Core Generator contains several optimized filter implementations.
+
+### Finite Impulse Response Filters
+
+The filter we shall build is called a finite impulse response filter (FIR) digital filter which calculate the weighted sum of the current and past inputs. FIR filters are also known as transversal filters or as a tapped delay line. The behavior of the finite impulse response filter can be described by the equation:
+
+<p align="center"> <img src="fir_equation.jpg"></p>
+
+where *y<sub>t</sub>* denotes the output at time *t* and *x<sub>t</sub>* represents the input at time *t* and *a<sub>k</sub>* are the filter coefficients We shall use an "inner product" processing element to perform a single multiplication and addition and then replicate this processing element to make a circuit that compute the filtering function. We shall assume at the coefficients are constants which will allow us to use constant coefficient multipliers in our implementation.
+
+We can model a finite impulse response filter in Haskell (the host language of Lava) with the following code.
+
+```haksell
+semisystolicFIR weights xvals [] = [] 
+semisystolicFIR weights xvals (xin:xrest) 
+  = sum [w * x | (w,x) <- zip weights xvals] : 
+    semisystolicFIR weights (xin : init xvals) xrest
+```
+
+This function takes three arguments:
+
+* a list of weight values (`weights`)
+* a list of the x-values at each tap of the filter (`xvals`)
+* a list of input samples where the first sample value is called `xin` and the remainder are called `xrest`
+
+If the input stream is empty i.e. the empty list `[]` then this function returns the empty list. If the input stream is non-empty then the first value in the input list is bound to xin and the remainder of the list is bound to xrest. The `xvals` are paired for multiplication up with their corresponding weight values by using the `zip` list processing function (for matching up elements pair-wise across two lists). The products are added to yield the filter result for this tick. This result is then followed by a list that corresponds to the remainder of the input stream (xrest) being recursively processed by the same function. However, we have to shift along the `xvals` so the `xin` value appears at the first tap. The expression (`init xvals`) returns the original xvals list with the last element removed. This allows us the express the "shifting in" of the new `x` value with the expression `xin : init xvals`.
+
+Although the s`emisystolicFIR` function does not correspond to a Lava circuit it can be used to simulate a filter. For example, assuming we have an input stream which corresponds to sine wave (scaled by 127) we can calculate the result of applying a finite impulse response filter with `weights1 =[3, 9, 15, 7, 5]`. Here is the results of performing such a simulation at the prompt of the ghci Haskell interpreter (looking at only the first 10 values of the input and output).
+
+```haskell
+Systolic1DFir> take 10 sineValues [0,9,18,26,35,43,52,60,67,75] Systolic1DFir> take 10 (semisystolicFIR weights1 [0,0,0,0,0] sineValues) [0,0,27,135,375,672,1005,1340,1668,1997]
+```
+
+As a final step a filtering function may divide the output by the sum of the coefficients which will scale the output signal back into the range of the input signal (this is note done by this implementation). Choosing coefficients that have sum which is a power of two make it easy to perform such scaling since this corresponds to throwing allow some of the low order bits.
+
+### A Semi-Systolic Filter
+
+First we describe a semi-systolic filter. In a systolic design all the wires between processing elements have at least one latch and all the latches have the same clock signal. In a semi-systolic design this constraint is relaxed to allow wires between processing elements which do not have any latches.
+
+The inner product processing element will take as inputs an accumulated sum from previous processing elements (`yin`), a filter coefficient (`ai`) and a sample value from the input stream (`xin`) and return two values: the `xin` is passed to `xout` and the `yout` is computed by performing the inner product calculation and adding it to the accumulated sum i.e. `yout = yin + ai * xin`. An implementation for an inner product processor is shown below where the purple circle denotes a constant coefficient multiplication by the value `ai` and the green circle denotes an adder. The input `x` values are passed from left to right and the accumulated sums as passed right right to left.
+
+<p align="center"> <img src="inner_product_processor.jpg"></p>
+
+To make a complete filter we need a way of sequencing the `x` values one at a time through each processing element. This can be accomplished by placing a register at the `xin` input of the inner product processing giving the following processing element:
+
+<p align="center"> <img src="semisystolic_pe.jpg"></p>
+
+A semi-systolic filter can now be made by composing several comprises of this processing element. We need one processing element for each tap in the filter so a four tap filter would like look:
+
+<p align="center"> <img src="semisystolic.jpg"></p>
+
+This is a semi-systolic filter because although there are registers on the wires carrying the x values there are no registers on the wires that carry the accumulated sum. The critical path of this circuit goes through four processing elements which makes this a poor implementation choice.
+
+The Lava description of this filter can be used to generate VHDL for simulation and EDIF for implementation using Xilinx's place and route tools. The VHDL simulation shows that the filter behaves as expected:
+
+<p align="center"> <img src="semisystolic_sim.jpg"></p>
+
+The layout of this filter is shown below implemented in the corner of a Virtex-II FPGA (an XC2V1000-FF896 with speed grade 6).
+
+<p align="center"> <img src="semisystolic_floorplan.jpg"></p>
+
+This adders grow taller in a left to right direction as the accumulated sum gets larger. This implementation has a maximum combinational delay of 14.527ns (as reported by the place and route tools) which gives a maximum frequency of 68.8MHz and has 14 logic levels. This implementation uses 119 slices. This layout can be compacted by overlapping some of the pipeline registers with the result of the KCM calculation which also results in a faster implementation.
+
+A better filter can be made by transforming this semi-systolic filter into a systolic filter by the systematic application of three techniques: retiming, slowdown and hold-up.
+
+### The Processing Element
+
+The processing element of the 1D systolic FIR is shown below. Both the `x` values and the accumulated results flow from left to right. Registers are added at the inputs and outputs for pipelining in a way that makes sure the accumulated sums and x values stay in sync.
+
+<p align="center"> <img src="pe_holdup.jpg"></p>
+
+This circuit can be specified by the Lava code below which makes use of [A Constant Coefficient Multiplier Core in Lava](#a-constant-coefficient-multiplier-core-in-lava) described in the following section.
+
+```haskell
+holdupPE clk k
+  =  fsT (registerAndMultiply clk k) >->
+     reorg >-> 
+     snD ((flexibleUnsignedAdder >|> vreg clk) >-> vreg clk)
+     where
+     reorg ((a,b),c) = (a,(b,c))
+```
+
+### A 4-tap Filter
+
+An example of a four tap filter using this processing element is shown below:
+
+<p align="center"> <img src="holdup_fir.jpg"></p>
+
+This is formed by simply replicating the processing element horizontally. The `x` input has to be delayed by one clock tick to synchronize with the `y` inputs. When this filter is implemented by the Xilinx place and route tools the last two registers on the x path are automatically pruned as is the unused xout signal. The Lava code for this filter is shown below.
+
+```haskell
+holdupFilter :: [Int] -> Bit -> [Bit] -> [Bit]
+holdupFilter weights clk xin
+  = yout
+    where
+    (xout, yout) = hser [holdupPE clk k | k <- reverse weights]) 
+                   (xin, replicate (length xin) gnd)
+```
+
+This filter has a much higher latency (8 ticks) than the semi-systolic filter:
+
+<p align="center"> <img src="holdup_sim.jpg"></p>
+
+However, since the longest combinational path between any two registers goes through just one processing element. The place and route tools report a maximum clock period of 6.687ns which allows this filter to be run at 150MHz. A more compact but slower filter can be made by realizing the multiple register stages with SRL16 components (shift registers implemented in LUTs which can shift by up to 16 stages). A better implementation can be produced by transforming the semi-systolic implementation into a systolic implementation by the systematic application of three techniques: retiming, slowdown and hold-up.
+
+### Describing The Semi-Systolic Filter
+
+Although the semi-systolic filter is not recommended for FPGA implementation we reproduce the implementation and show how it can be captured in Lava.
+
+<p align="center"> <img src="semisystolic.jpg"></p>
+
+This architecture can not be directly described by the Lava combinators introduced so far because there is both left to right and right to left data-flow through each block. To help describe such communication patterns we introduce a new combinator called two-way serial and written as `><`:
+
+<p align="center"> <img src="two_way_serial.jpg"></p>
+
+This combinator can then be used to describe a combinator called `twoWayRow` for the serial composition of many identical blocks that have two-way data-flow:
+
+<p align="center"> <img src="two_way_row.jpg"></p>
+
+The definition of `twoWayRow` is:
+
+```haskell
+twoWayRow = foldl1 (><)
+```
+
+## A Constant Coefficient Multiplier Core in Lava
 
 This section describes how to build a constant coefficient multiplier (KCM) for the Virtex family of FPGAs using a combination of table lookups and additions. There are many other kinds of KCM: this one has been chosen to help illustrate how to design with distributed memory components in Lava.
 
@@ -529,286 +835,11 @@ On a XCV300-4-BG432 part this circuit runs at a speed of at least 196MHz. The la
 
 The 4-bit multiplications occur in the rectangular block on the left and the weighted adder tree is shown on the right hand side of the picture. On a XCV300-4-BG432 this circuit operates at a speed of at least 130MHz. Many other layouts are possible e.g. to place the 4-bit multiplications closer to their corresponding adders at the leaves of the adder tree.
 
-## A Sorter Example in Lava
-
-### Sorting with Butterfly Networks
-
-This section describes how to build a sorter circuit using butterfly networks which are carefully placed to ensure high performance. The sorter circuit is made by recursively merging the results of sub-sorts. A top-level schematic of the circuit that we present in this section is shown below. The merger that we present is bitonic which requires the first half of the input list to be increasing and the second half decreasing (or vice versa). The result of the top sorter is reversed to accommodate this requirement.
-
-<p align="center"> <img src="sorter_view1.jpg"></p>
-
-### Batcher's Bitonic Merger
-
-Given the ability to sort two numbers and the diagram above we have a recursive formula for making sorters of any size. First the availability of a two sorter is assumed and the merger is designed. Then the implementation of the two sorter is given.
-
-A merger called Batcher's Bitonic Merger can be made by using a butterfly of two sorters. Here is an example of a specific butterfly network of two sorters (written as 2S) which merges eight numbers:
-
-<p align="center"> <img src="bfly3_two_sorter.jpg"></p>
-
-To help describe such butterfly networks in Lava a few useful circuit combinators are introduced.
-From the top level description we see that a reverse operation is required and we can simply use the built in Haskell `reverse` function:
-
-<p align="center"> <img src="reverse.jpg"></p>
-
-Another very useful wiring combinator is called `riffle` and an instance of it is shown below:
-
-<p align="center"> <img src="riffle.jpg"></p>
-
-This wiring combinator interleaves the odd and even elements of the input list (shown on the left). It can be defined in Lava as:
-
-```haskell
-riffle = halve >-> ziP -> unpair
-```
-
-The halve function splits a list into two halves which are returned in a two element tuple. The `ziP` combinator takes a pair of lists and returns a new list of pairs by associating each element in the first list with the corresponding element in the second list. The unpair function then flattens this list of pairs into a list.
-
-It is also useful to be able to perform the inverse function of riffle called `unriffle`. This circuit can be thought of as the reflection of the riffle circuit along a vertical axis as shown below.
-
-<p align="center"> <img src="unriffle.jpg"></p>
-
-The definition of `unriffle` in Lava is given below.
-
-```haskell
-unriffle = pair >-> unzip >-> unhalve
-```
-
-Sometimes a bus containing n elements is processed by using two copies of a circuit such that the first copy of the circuit operates on the bottom half of the input and the second copy of the circuit operates on the top half of the input as shown below for a four input bus:
-
-<p align="center"> <img src="two.jpg"></p>
-
-The combinator that performs this task is called `two` and is easily defined in Lava:
-
-```haskell
-two r = halve >-> par [r,r] >-> unhalve
-```
-
-Note that this combinator placed the first copy of `r` below the second copy of `r`. A specific instance of this combinator is two `two_sorter` which is shown below:
-
-<p align="center"> <img src="two_sorter.jpg"></p>
-
-Another combining form that uses two copies of the same circuit is `ilv` (pronounced "interleave"). This combinator has the property that the bottom circuit processes the inputs at even positions and the top circuit processes the inputs at the odd positions. An instance of `ilv R` for an eight input bus is shown below.
-
-<p align="center"> <img src="ilv.jpg"></p>
-
-The `ilv` combinator can be defined by noticing the it is the composition of an `unriffle`, `two R` and `riffle`:
-
-```haskell
-ilv r = unriffle >=> two r >=> riffle
-```
-
-The evens combinator chops the input list into pairs and then applies copies of the same circuit to each input. The argument circuit for evens must be a pair to pair circuit. An instance of `evens two_sorter` over an eight input list is shown below.
-
-<p align="center"> <img src="evens_two_sorter.jpg"></p>
-
-This combinator is defined as:
-
-```haskell
-evens f = chop 2 >-> maP f >-> concat
-```
-
-Using the combinators shown above we can now describe a butterfly network of some circuit `r` (such that `r` is a pair to pair circuit):
-
-```haskell
-bfly r 1 = r
-bfly r n = ilv (bfly r (n-1)) >-> evens r 
-```
-
-Here is a picture of `bfly r 1`:
-
-<p align="center"> <img src="bfly1.jpg"></p>
-
-This makes sense in the case of a two sorter since a butterfly of size 1 has 2 inputs which can be sorted by a single two sorter. The layout for `bfly r 2` is:
-
-<p align="center"> <img src="bfly2.jpg"></p>
-
-The left hand side of this picture shows an interleave of `R` and the right hand side shows `evens R`. The layout for `bfly r 3` is:
-
-<p align="center"> <img src="bfly3.jpg"></p>
-
-Note that a sub-butterfly of size 2 has been identified with a pale background. It can be instructive to unfold the `bfly r 3` expression and then try and spot where the various combinators occur in the picture.
-
-```haskell
-bfly r 3 
-  = ilv (bfly r 2)) >-> evens r 
-  = ilv (ilv r >-> evens r) >-> evens r
-```
-
-To make a merger all we need to do is to instance this butterfly with a two sorter. Here is a picture of `bfly r two_sorter` (also shown before):
-
-<p align="center"> <img src="bfly3_two_sorter.jpg"></p>
-
-This solves the right hand side of the sorter architecture since `bfly two_sorter` makes a bitonic merger:
-
-<p align="center"> <img src="sorter_view2.jpg"></p>
-
-The two remaining sorters can be recursively decomposed using exactly the same technique used to decompose the top level sorter. For example, the upper sorter can be implemented by using a merger (shown on the right) and then sorting the two sub-lists. Since each sub-list contains just two elements we get to the base case of the recursion and deploy a two sorter.
-
-<p align="center"> <img src="sorter_view3.jpg"></p>
-
-But how is the merger realized? As before, it is just a butterfly of two sorters, in this case `bfly 2 two_sorter`:
-
-<p align="center"> <img src="sorter_view4.jpg"></p>
-
-Applying the same technique to the lower sorter gives the complete architecture for a size 3 sorter (i.e. 2^3 inputs = 8):
-
-<p align="center"> <img src="sorter_recursion.jpg"></p>
-
-Although it is not at all obvious this circuit sorts eight numbers it has been systematically derived from a simple procedure which can be codified in Lava as:
-
-```haskell
-sorter cmp 1 = cmp 
-sorter cmp n = two (sorter cmp (n-1)) >-> 
-               sndList reverse >-> bfly cmp n
-```
-
-This description says that a sorter of degree 1 (i.e. 2 inputs) can be made using a two sorter. A larger sorter is made by using two small sorters, then reversing the result of the upper sort, and then merging these sub-sorts using a butterfly of two sorters. Note that this sorter description is parameterized on the specific sorter to be used.
-
-An instance of `sorter two_sorter` produces a pipelined 8 input sorter which is shown below on a Virtex-II device:
-
-<p align="center"> <img src="sortb_3.jpg"></p>
-
-Note that since Lava combinators include layout as well as connectivity information the resulting circuit occupies a rectangular area which corresponds to the pictures shown above.
-
-A degree 4 (i.e. 16 inputs) sorter is shown below:
-
-<p align="center"> <img src="sortb_4.jpg"></p>
-
-A degree 5 (i.e. 32 inputs) sorter is shown below:
-
-<p align="center"> <img src="sortb_5.jpg"></p>
-
-A slightly larger version of the network above which sorts 32 16-bit numbers each clock tick operates at 165MHz on a XC2V3000 part with a latency of 14 clock ticks (using the 4.1i version of the Xilinx design tools). Larger data-sets can be sorted by storing numbers in BlockRAM and then iteratively sorting and merging. More details can be found in the paper
-[Design and Verification of a Sorter Core](https://dl.acm.org/doi/10.5555/646705.702175).
-
-Some instances of these butterfly networks were implemented on a XCV300 FPGA and ChipScope was used to verify that the real hardware actually did sort numbers:
-
-<p align="center"> <img src="chipscope_bfly.jpg"></p>
-
-## A 1D Systolic FIR
-
-processing element of the systolic array. Then we show how this processing element can be replicated to form a filter. Note that there are many ways of designing such filters and this technique is not the best possible implementation on Xilinx's FPGA architectures. This example has been chosen to help illustrate how to describe systolic-style systems in Lava.
-NOTE: The filter implementations presented here are designed to illustrate aspects of Lava and are not the recommended implementations for Xilinx's FPGAs. Xilinx's Core Generator contains several optimized filter implementations.
-
-### Finite Impulse Response Filters
-
-The filter we shall build is called a finite impulse response filter (FIR) digital filter which calculate the weighted sum of the current and past inputs. FIR filters are also known as transversal filters or as a tapped delay line. The behavior of the finite impulse response filter can be described by the equation:
-
-<p align="center"> <img src="fir_equation.jpg"></p>
-
-where *y<sub>t</sub>* denotes the output at time *t* and *x<sub>t</sub>* represents the input at time *t* and *a<sub>k</sub>* are the filter coefficients We shall use an "inner product" processing element to perform a single multiplication and addition and then replicate this processing element to make a circuit that compute the filtering function. We shall assume at the coefficients are constants which will allow us to use constant coefficient multipliers in our implementation.
-
-We can model a finite impulse response filter in Haskell (the host language of Lava) with the following code.
-
-```haksell
-semisystolicFIR weights xvals [] = [] 
-semisystolicFIR weights xvals (xin:xrest) 
-  = sum [w * x | (w,x) <- zip weights xvals] : 
-    semisystolicFIR weights (xin : init xvals) xrest
-```
-
-This function takes three arguments:
-
-* a list of weight values (`weights`)
-* a list of the x-values at each tap of the filter (`xvals`)
-* a list of input samples where the first sample value is called `xin` and the remainder are called `xrest`
-
-If the input stream is empty i.e. the empty list `[]` then this function returns the empty list. If the input stream is non-empty then the first value in the input list is bound to xin and the remainder of the list is bound to xrest. The `xvals` are paired for multiplication up with their corresponding weight values by using the `zip` list processing function (for matching up elements pair-wise across two lists). The products are added to yield the filter result for this tick. This result is then followed by a list that corresponds to the remainder of the input stream (xrest) being recursively processed by the same function. However, we have to shift along the `xvals` so the `xin` value appears at the first tap. The expression (`init xvals`) returns the original xvals list with the last element removed. This allows us the express the "shifting in" of the new `x` value with the expression `xin : init xvals`.
-
-Although the s`emisystolicFIR` function does not correspond to a Lava circuit it can be used to simulate a filter. For example, assuming we have an input stream which corresponds to sine wave (scaled by 127) we can calculate the result of applying a finite impulse response filter with `weights1 =[3, 9, 15, 7, 5]`. Here is the results of performing such a simulation at the prompt of the ghci Haskell interpreter (looking at only the first 10 values of the input and output).
-
-```haskell
-Systolic1DFir> take 10 sineValues [0,9,18,26,35,43,52,60,67,75] Systolic1DFir> take 10 (semisystolicFIR weights1 [0,0,0,0,0] sineValues) [0,0,27,135,375,672,1005,1340,1668,1997]
-```
-
-As a final step a filtering function may divide the output by the sum of the coefficients which will scale the output signal back into the range of the input signal (this is note done by this implementation). Choosing coefficients that have sum which is a power of two make it easy to perform such scaling since this corresponds to throwing allow some of the low order bits.
-
-### A Semi-Systolic Filter
-
-First we describe a semi-systolic filter. In a systolic design all the wires between processing elements have at least one latch and all the latches have the same clock signal. In a semi-systolic design this constraint is relaxed to allow wires between processing elements which do not have any latches.
-
-The inner product processing element will take as inputs an accumulated sum from previous processing elements (`yin`), a filter coefficient (`ai`) and a sample value from the input stream (`xin`) and return two values: the `xin` is passed to `xout` and the `yout` is computed by performing the inner product calculation and adding it to the accumulated sum i.e. `yout = yin + ai * xin`. An implementation for an inner product processor is shown below where the purple circle denotes a constant coefficient multiplication by the value `ai` and the green circle denotes an adder. The input `x` values are passed from left to right and the accumulated sums as passed right right to left.
-
-<p align="center"> <img src="inner_product_processor.jpg"></p>
-
-To make a complete filter we need a way of sequencing the `x` values one at a time through each processing element. This can be accomplished by placing a register at the `xin` input of the inner product processing giving the following processing element:
-
-<p align="center"> <img src="semisystolic_pe.jpg"></p>
-
-A semi-systolic filter can now be made by composing several comprises of this processing element. We need one processing element for each tap in the filter so a four tap filter would like look:
-
-<p align="center"> <img src="semisystolic.jpg"></p>
-
-This is a semi-systolic filter because although there are registers on the wires carrying the x values there are no registers on the wires that carry the accumulated sum. The critical path of this circuit goes through four processing elements which makes this a poor implementation choice.
-
-The Lava description of this filter can be used to generate VHDL for simulation and EDIF for implementation using Xilinx's place and route tools. The VHDL simulation shows that the filter behaves as expected:
-
-<p align="center"> <img src="semisystolic_sim.jpg"></p>
-
-The layout of this filter is shown below implemented in the corner of a Virtex-II FPGA (an XC2V1000-FF896 with speed grade 6).
-
-<p align="center"> <img src="semisystolic_floorplan.jpg"></p>
-
-This adders grow taller in a left to right direction as the accumulated sum gets larger. This implementation has a maximum combinational delay of 14.527ns (as reported by the place and route tools) which gives a maximum frequency of 68.8MHz and has 14 logic levels. This implementation uses 119 slices. This layout can be compacted by overlapping some of the pipeline registers with the result of the KCM calculation which also results in a faster implementation.
-
-A better filter can be made by transforming this semi-systolic filter into a systolic filter by the systematic application of three techniques: retiming, slowdown and hold-up.
-
-### The Processing Element
-
-The processing element of the 1D systolic FIR is shown below. Both the `x` values and the accumulated results flow from left to right. Registers are added at the inputs and outputs for pipelining in a way that makes sure the accumulated sums and x values stay in sync.
-
-<p align="center"> <img src="pe_holdup.jpg"></p>
-
-This circuit can be specified by the Lava code below which makes use of a KCM and an adder that were presented earlier.
-
-```haskell
-holdupPE clk k
-  =  fsT (registerAndMultiply clk k) >->
-     reorg >-> 
-     snD ((flexibleUnsignedAdder >|> vreg clk) >-> vreg clk)
-     where
-     reorg ((a,b),c) = (a,(b,c))
-```
-
-### A 4-tap Filter
-
-An example of a four tap filter using this processing element is shown below:
-
-<p align="center"> <img src="holdup_fir.jpg"></p>
-
-This is formed by simply replicating the processing element horizontally. The `x` input has to be delayed by one clock tick to synchronize with the `y` inputs. When this filter is implemented by the Xilinx place and route tools the last two registers on the x path are automatically pruned as is the unused xout signal. The Lava code for this filter is shown below.
-
-```haskell
-holdupFilter :: [Int] -> Bit -> [Bit] -> [Bit]
-holdupFilter weights clk xin
-  = yout
-    where
-    (xout, yout) = hser [holdupPE clk k | k <- reverse weights]) 
-                   (xin, replicate (length xin) gnd)
-```
-
-This filter has a much higher latency (8 ticks) than the semi-systolic filter:
-
-<p align="center"> <img src="holdup_sim.jpg"></p>
-
-However, since the longest combinational path between any two registers goes through just one processing element. The place and route tools report a maximum clock period of 6.687ns which allows this filter to be run at 150MHz. A more compact but slower filter can be made by realizing the multiple register stages with SRL16 components (shift registers implemented in LUTs which can shift by up to 16 stages). A better implementation can be produced by transforming the semi-systolic implementation into a systolic implementation by the systematic application of three techniques: retiming, slowdown and hold-up.
-
-### Describing The Semi-Systolic Filter
-
-Although the semi-systolic filter is not recommended for FPGA implementation we reproduce the implementation and show how it can be captured in Lava.
-
-<p align="center"> <img src="semisystolic.jpg"></p>
-
-This architecture can not be directly described by the Lava combinators introduced so far because there is both left to right and right to left data-flow through each block. To help describe such communication patterns we introduce a new combinator called two-way serial and written as `><`:
-
-<p align="center"> <img src="two_way_serial.jpg"></p>
-
-This combinator can then be used to describe a combinator called `twoWayRow` for the serial composition of many identical blocks that have two-way data-flow:
-
-<p align="center"> <img src="two_way_row.jpg"></p>
-
-The definition of `twoWayRow` is:
-
-```haskell
-twoWayRow = foldl1 (><)
-```
-
+## Xilinx Lava Tutorials
+
+* [Tutorial 1: Describing Netlists](lava_tutorial1.pdf)
+* [Tutorial 2: Combinators and Placement](lava_tutorial2.pdf)
+* [Tutorial 3: Placement with Overlay](lava_tutorial3.pdf)
+* [Tutorial 4: Regular 2-Sided Composition](lava_tutorial4.pdf)
+* [Tutorial 5: Regular 4-Sided Composition](lava_tutorial5.pdf)
+* [Tutorial 6: Parametrization and CORDIC example](lava_tutorial6.pdf)
