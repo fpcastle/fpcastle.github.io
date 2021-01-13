@@ -30,7 +30,7 @@ Here I give a flavor of the Lava HDL and how it can be used to describe circuits
 produced by [Andy Gill](https://eecs.ku.edu/andy-gill)'s team called [Kansas Lava](https://ku-fpg.github.io/software/kansas-lava).
 
 I've switched to doing similar kinds of circuit design using a Lava-like DSL embedded in the [Coq](https://coq.inria.fr) theorem prover which
-allows us to prove properties about our circuits and have machine checked proofs about the laws of combinator compositional.
+allows us to prove properties about our circuits and have machine checked proofs about the laws of combinator composition.
 We call this system Cava (Coq + Lava) which is produced as part of the [Silver Oak](https://github.com/project-oak/oak-hardware) project at Google Research.
 
 ## Describing Netlists in Lava
