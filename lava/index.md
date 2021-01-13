@@ -5,7 +5,8 @@ title: Lava
 # Lava
 
 ## A Hardware Description Language in Haskell
-Lava is an experimental system design to aid the digital design of circuits by providing a powerful library for composing structural circuit descriptions. Lava is designed to help specify the layout of circuits which can improve performance and reduce area utilization. An implementation of Lava for Xilinx's FPGAs can be found at Hackage and installed with "cabal install xilinx-lava".
+Lava is an experimental system design to aid the digital design of circuits by providing a powerful library for composing structural circuit descriptions. Lava is designed to help specify the layout of circuits which can improve performance and reduce area utilization.
+This page describes an old version of Lava that was used to produce efficient FPGA circuits with compact layout.
 The following pages give a flavor of the Lava HDL and how it can be used to describe circuits for implementation of Xilinx's Virtex family of FPGAs. These pages assume a good understanding of Xilinx's Virtex FPGA architecture and of the Haskell lazy functional programming language. The number of people that know about both can easily fit inside a medium sized elevator. So it may be useful to read A Gentle Introduction to Haskell if you are unfamiliar with functional programming languages. Information about Xilinx's FPGA can be found at
 [http://www.xilinx.com]([http://www.xilinx.com). A detailed set of Lava tutorials are also available.
 
@@ -190,3 +191,186 @@ A four sided tile is divided into the input signal and output signal portions by
 To put one four sided tile below another four sided tile requires a new combinator because these tiles do not have the appropriate types for the `par2` combinator. Lava provides the below combinator for this task and the picture below shows the circuit `` r `below` s ``:
 
 <p align="center"> <img src="below.jpg"></p>
+
+The circuit `r` has the type `(e,b) -> (c, x)` and the circuit s has the type `(x,e) -> (f, g)` and the composite circuit has the type `(e, (b, e)) -> ((c, f), g)` where `x` is the type of the intermediate signal that `r` and `s` communicate along. There is also a beside combinator that lays out `s` to the right of `r`.
+
+### Row and Col
+
+Four sided tiles can be replicated and composed to form columns and rows. The col combinator tiles a circuit r vertically and forms connections between the top and bottom faces of the tile:
+
+<p align="center"> <img src="col.jpg"></p>
+
+The `row` combinator composes tiles horizontally from left to right and is based on the beside combinator. Rows and column combinators can be used to describe many interesting layout patterns and emulate layout grids which are not four sided. Here is how a hex-connected grid might be described in terms of four sided tiles:
+
+<p align="center"> <img src="hex.jpg"></p>
+
+## An Adder Example
+
+### A Ripple Carry Adder Example (using the Virtex Carry Chain)
+
+This section describes how to design a ripple-carry adder in Lava that uses the Virtex carry chain. This component is widely used in many other Lava examples. First we present how to describe a one-bit adder cell using the regular netlist style. Then we use layout combinators to create a vertical column of these cells that make up a carry-chain ripple-carry adder.
+
+### A One-Bit Adder
+
+A one-bit adder can be accommodated in one half of a slice using just one function generator as a LUT, one MUXCY and one XORCY. For this reason we will describe the one-bit adder in netlist style. A schematic for a one-bit carry chain adder is shown below.
+
+<p align="center"> <img src="adder1.jpg"></p>
+
+A column layout combinator will be used later to tile several one-bit adders vertically to make an n-bit adder. Before we tile the one-bit adder vertically we have to carefully consider which sides of the tile the signals are connected to. We shall assume a left to right data flow with the two bits to be added connected to the left hand side of the tile and the sum bit appearing from the right hand side of the tile. Since the carry must flow upwards in the Virtex architecture the `cin` signal must come into the bottom of the tile and the `cout` signal must emerge from the top of the tile. This gives the following four-sided tile orientation:
+
+<p align="center"> <img src="adder1_tile.jpg"></p>
+
+This four-sided tile represents a circuit with input `((a,b), cin)` because `(a,b)` is the left input and cin in the bottom input. This tile also has the output `(sum, cout)` because sum is the right `output` and `cout` is the top output. This fixes the type for this one-bit adder adder tile which can now be described as a Lava netlist as follows:
+
+```haskell
+oneBitAdder :: (Bit, (Bit, Bit)) -> (Bit, Bit)
+oneBitAdder (cin, (a,b))
+  = (sum, cout) 
+    where 
+    part_sum = xor2 (a, b)
+    sum = xorcy  (part_sum, cin)
+    cout = muxcy (part_sum, (a, cin))
+```
+
+This is very similar to what one would write in VHDL or Verilog except that the instance names are anonymous. Furthermore, the Lava description includes information in the shape of the types that indicates which faces of the tile signals occur and in what order. This is essential in order to compose tiles using combinators which automatically glue together circuit interfaces and layout out circuits in specific patterns.
+
+### A 4-bit Carry Chain Adder
+
+To make a 4-bit adder all we need to do is to tile vertically four one-bit adder tiles:
+
+<p align="center"> <img src="adder4.jpg"></p>
+
+In a conventional HDL this can be described either by copying and pasting the instantiating code for each one-bit adder and then naming intermediate nets which cause components to be connected together to form the composite four-bit adder netlist. Constructs like `for...generate` in VHDL help to capture such repetition more concisely but internal nets still have to be named and there is no information about layout. The Lava description of the circuit show above is simply:
+
+```haskell
+col 4 oneBitAdder
+```
+
+This is much more concise than equivalent conventional HDL descriptions. It also includes information about layout: the first one-bit adder tile is at the bottom and then the other are stacked on top of it in sequence (RLOCs are generated to enforce this layout). Internal nets are anonymous and circuits are composed automatically by taking the input from below and attaching it to the carry input of the tile.
+
+An example Virtex layout of a 8-bit adder generated by the expression `col 8 oneBitAdder` is show below:
+
+<p align="center"> <img src="adder8_floorplan.jpg"></p>
+
+In Lava a parameterized n-bit adder can be defined as:
+
+```haskell
+adder :: Int -> (Bit, ([Bit], [Bit])) -> ([Bit], Bit)]
+adder n (cin, (a, b))
+  = col n oneBitAdder (cin, zip a b)
+```
+
+This parameterized adder function uses an integer parameter n to determine the size of the adder. This controls how many one-bit adders are placed in a column. Each one-bit adder is expecting a par of bits on its left edge. To form the correct input for a column of one-bit adders we have to pair-wise associate the two inputs vectors a and b. This is accomplished by using the list processing function `zip` which has the Haskell type `[a] -> [b] -> [(a, b)]`. For example:
+
+```haskell
+zip [1, 4, 9] [2, 13, 5] = [(1,2), (4,13), (9,5)]
+```
+
+The use of `zip` in adder ensures that the nth bit of `a` is added to the nth bit of `b`.
+A specialized version of the adder which has no carry in or carry out can defined as:
+
+```haskell
+adderNoCarry :: Int -> ([Bit], [Bit])) -> [Bit]
+adderNoCarry n (a,b) 
+  = sum 
+    where 
+    (sum, carryOut) = adder n (gnd, (a,b))
+```
+
+This definition uses the gnd component to provide the carry in signal and just discards the carry out.
+A registered 4-bit adder can be made by composing the `adderNoCarry` component and the `vreg` component using `>|>` (the serial overlay operator) to make sure the adder and register share the same location:
+
+
+<p align="center"> <img src="vaddreg.jpg"></p>
+
+A parameterized n-bit registered adder can be defined as:
+
+```haskell
+registeredAdder :: Int -> Bit -> ([Bit], [Bit]) -> [Bit]
+registeredAdder n clk = adderNoCarry n >|> vreg clk
+```
+
+The Virtex layout produced for `registeredAdder 4` is shown below.
+
+<p align="center"> <img src="radd4_floorplan.jpg"></p>
+
+## An Adder Tree in Lava
+
+Consider the task of adding eight numbers n1, n2, .. n8 use a binary tree of adders as shown below.
+
+<p align="center"> <img src="adder_tree_n.jpg"></p>
+
+In a language like VHDL one can write a recursive function that takes an unconstrained array of numbers as input and returns their sum computed with an adder tree. However, there is no standard way in VHDL of specifying how the adder tree should be laid out. Adder trees are typically pipelined and it takes just one adder to be badly placed to degrade the performance of the whole adder tree. Since Lava can specify how the adders are to be laid out the design engineer can make decisions and calculations about intermediate wire delays. One example layout scheme for a pipelined adder tree is shown below (the clock wires are now shown):
+
+<p align="center"> <img src="adder_tree_middle.jpg"></p>
+
+This layout scheme places the adders in a row with the final addition occurring in the middle. Both the left and right hand sides of the final adder also contain adder trees in which the final sum occurs in the middle. This recursive structure continues until the leaf additions are encountered (e.g. the adder for n1 and n2).
+
+### The middle Combinator
+
+<p align="center"> <img src="middle.jpg"></p>
+
+Note that this combinator produces a two-sided tile which has two inputs on the left and one output on the right.
+
+## Tree Circuits in Lava
+
+Using the middle combinator we can define a tree circuit combinator for any kind of two input and one output circuit:
+
+```haskell
+tree circuit [a] = a 
+tree circuit [a, b] = circuit (a, b) 
+tree circuit xs 
+  = middle (tree circuit) circuit (tree circuit)(halve xs) 
+```
+
+* The first line of this definition is used when a singleton list is given to the tree circuit. In this case the result is just the sole element of the list.
+* The second line is used when a two element list is used with a tree circuit. In this case the result is obtain by processing the two inputs with the circuit that is the first parameter of the tree combinator.
+* In the third line case the middle circuit will be the parameterized two input and one output circuit and the left and right circuits will be recursively defined trees of this circuit. The input is halved with the first half going to the left sub-tree and the second half going to the right sub-tree.
+
+A combinational adder tree with bit-growth can be made with the flexibleAdder circuit. This circuit has the type `(Bit, Bit) -> (Bit)` so it is suitable for use as an element of an adder tree. To define a combinational adder tree one simply writes:
+
+```haskell
+adderTree = tree flexibleAdder
+```
+
+It is possible to rewrite a call to the tree combinator to see how it works for a particular circuit and input list:
+
+```haskell
+tree flexibleAdder [i1, i2, i3, i4]
+  = (middle (tree flexibleAdder) circuit (tree flexibleAdder)) (halveList [i1, i2,i3, i4]) 
+  = (middle (tree flexibleAdder) circuit (tree flexibleAdder)) [[i1, i2], [i3, i4]] 
+  = flexibleAdder (tree flexibleAdder [i1, i1], tree flexibleAdder [i2, i3]) 
+  = flexibleAdder (i1+i2, i3+i4) 
+  = i1+i2+i3+i4
+```
+
+We can use the `flexibleAdderFD` circuit to make a pipelined adder tree:
+
+```haskell
+adderTreeFD clk = tree (flexibleAdderFD clk)
+```
+
+The adders in this tree will use FD register components. An example layout of four 96-input pipelined adder trees stacked upon each other is shown below on a XCV300 part. The bit-growth in the adder tree helps to identify the recursive nature of the layout.
+
+<p align="center"> <img src="tree_stack96_4_small.jpg"></p>
+
+The adder trees shown above sum 96 9-bit numbers each and with this layout the circuit operates at 173MHz on a XCV300 at speed grade 6. If the layout information is removed and the same netlist is placed and routed again the maximum speed is 129MHz i.e. 34% slower. The graph below shows that specifying layout had significant performance advantages. The blue bars represent the speed of circuits with layout information and the red bars represented the speed of the same netlist with the layout information (RLOCs) removed. Each pair of bars corresponds to a target timing specification. The leftmost pair of bars is for the case where the place and route tools were asked to meet a timing specification of 180MHz but delivered 173MHz for the RLOC-ed circuit and 129MHz without the RLOCs.
+
+<p align="center"> <img src="speed_graph.jpg"></p>
+
+Providing layout information also speeds out the place and route times as shown in the graph below. For the 180MHz timespec case the netlist with layout took less then 400 seconds to route (nothing needs to be placed) but took more than 1800 seconds to place and route without layout information.
+
+<p align="center"> <img src="apr_graph.jpg"></p>
+
+The FPGA Editor view of the four placed adder trees is shown below.
+
+<p align="center"> <img src="adder_tree_fpgaeditor.jpg"></p>
+
+Without the RLOCs the following implementation is produced:
+
+<p align="center"> <img src="adder_tree_norloc_fpgaeditor.jpg"></p>
+
+The adder tree layout was easy to express in Lava and has produced significant performance advantages. Many other tree layout schemes can be easily explored in Lava. It is also very easy to make trees of other kinds of circuits like multiplier etc. All one has to do is to supply such circuits to the first argument of the `tree` combinator.
+
+## A Constant Coefficient Multiplier (KCM) Core in Lava
+
