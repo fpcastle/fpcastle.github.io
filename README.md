@@ -213,6 +213,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Qais Patankar
 * Hila Peleg
 * Artem Pelenitsyn
+* Jade Philipoom
 * Dan Piponi
 * Kushal Pisavadia
 * Nadia Polikarpova
