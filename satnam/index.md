@@ -22,7 +22,7 @@ and the University of Birmingham.
 # Bio (long)
 Satnam Singh works at [Google Research](https://research.google/)
 on the [Oak](https://github.com/project-oak/oak) project that is developing technology to promote secure and private computing.
-Satnam has previously worked on topics including functional programming, hardware design, domain-specific languages, compilers, custom hardware acceleration with ASICs and FPGAs, accelerating machine learning algorithms, concurrency and parallelism, formal verification, configuration management, distributed systems, container orchestration, cloud computing and low level Android performance improvement. 
+Satnam has previously worked on topics including functional programming, hardware design, domain-specific languages including [Lava](http://lava.fpcastle.com), compilers, custom hardware acceleration with ASICs and FPGAs, accelerating machine learning algorithms, concurrency and parallelism, formal verification, configuration management, distributed systems, container orchestration, cloud computing and low level Android performance improvement. 
 Satnam was an early team member of the [Kubernetes](https://kubernetes.io) project. Satnam has also
 held academic positions at The University of Glasgow and The University of Birmingham as well as
 visiting and adjuct positions elsewhere (Imperial College London and the University of Washington).
