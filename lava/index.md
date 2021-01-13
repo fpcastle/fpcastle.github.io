@@ -14,7 +14,7 @@ title: Lava
 * [Xilinx Lava Tutorials](#xilinx-lava-tutorials)
 
 ## A Hardware Description Language in Haskell
-I started developing Lava around 1998 when I worked at Xilinx to help produce FPGA circuits that were more compact and high performance that could practically
+[I](http://satnam.fpcastle.com) started developing Lava around 1998 when I worked at Xilinx to help produce FPGA circuits that were more compact and high performance that could practically
 achieved using the standard design flow based on VHDL or Verilog. Lava provided higher order combinators for composing both circuit functionality **and** layout
 *simultaneously*. This made it tractable for a hardware design engineer to communicate their intuitions about what would lead to a good floorplan by expressing
 it using techniques based on [functional geometry](https://dl.acm.org/doi/10.1145/800068.802148). The first paper about this work was
@@ -25,7 +25,7 @@ structural circuit descriptions i.e. a bottom-up construction of circuits. Lava 
 high level descriptions. However, the Lava circuit combinator library does provide high level tools for making certain kinds of low level circuit design more productive.
 
 This page describes an old version of Lava that was used to produce efficient FPGA circuits with compact layout.
-Here I give a flavor of the Lava HDL and how it can be used to describe circuits for implementation of Xilinx's Virtex family of FPGAs (now quite old!). These pages assume a good understanding of Xilinx's Virtex FPGA architecture and of the Haskell lazy functional programming language. The work on Lava and its many variants was done in collaboration with several people including
+Here I give a flavor of the Lava HDL and how it can be used to describe circuits for implementation on Xilinx's Virtex family of FPGAs (now quite old!). These pages assume a good understanding of Xilinx's Virtex FPGA architecture and of the Haskell lazy functional programming language. The work on Lava and its many variants was done in collaboration with several people including
 [Mary Sheeran](http://www.cse.chalmers.se/~ms/) and [Koen Claessen](http://www.cse.chalmers.se/~koen/) at Chalmers University of Technology. A much more recent version of Lava has been
 produced by [Andy Gill](https://eecs.ku.edu/andy-gill)'s team called [Kansas Lava](https://ku-fpg.github.io/software/kansas-lava).
 
