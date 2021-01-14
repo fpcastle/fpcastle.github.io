@@ -112,6 +112,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Justin Cormack
 * Stephen Creaney
 * Joe Cutler
+* Pierce Darragh
 * Dan Dart 
 * Laurence E. Day
 * James Decker
