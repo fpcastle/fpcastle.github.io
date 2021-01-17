@@ -116,6 +116,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dan Dart 
 * Laurence E. Day
 * James Decker
+* Pol Dellaiera
 * Dusty DeWeese
 * Thomas Dickerson
 * Lucas Dicioccio
@@ -159,6 +160,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Robert Grimm
 * Joshua Grosso
 * Finn Espen Gundersen
+* Shaurya Gupta
 * Stefan Holdermans
 * Celeste Hollenbeck
 * Carsten Kehler Holst
