@@ -72,189 +72,189 @@ If you answered 1 then you can move onto the next stage of the interview process
 ## Members In Spirit
 Until I get FP Castle formally launched as a company I am accepting "members in spirit". Please tag me or DM me on Twitter [@satnam6502](https://twitter.com/satnam6502) to be included in this list (please let me know your real name).
 
-* Justus Adam
-* Ali Ahmed
-* Özgür Akgün
-* Maximilian Algehed
-* Thorsten Altenkirch
-* Moritz Angermann
-* Owen Arden
-* Daniil Archangelsky
-* Julian Arni
-* Aslan Askarov
-* Lennart Augustsson
-* Jonathan Balkind
-* Nick Benton
-* Siddharth Bhat
-* Satish Bhatti
-* Annette Bieniusa
-* Ben Blaxill
-* Nikolaj Bjorner
-* Edwin Brady
-* Paul Brauner
-* Joachim Breitner
-* James Brock
-* Alex Brown
-* Christopher Brown
-* Guim Caballero
-* Jose Calderon
-* Richard Careaga
-* Harold Carr
-* Jacques Carette
-* Colin Carruthers
-* Tim Carstens
-* Francesco Cesarini
-* James Chapman
-* Benjamin Chetioui
-* Koen Claessen
-* Liam O'Connor
-* Ezra Cooper
-* Justin Cormack
-* Stephen Creaney
-* Joe Cutler
-* Pierce Darragh
-* Dan Dart 
-* Laurence E. Day
-* James Decker
-* Pol Dellaiera
-* Dusty DeWeese
-* Thomas Dickerson
-* Lucas Dicioccio
-* Alex Dixon
-* sNathan van Doorn
-* Derek Dreyer
-* Eli T. Drumm
-* Thomas M. DuBuisson
-* Ian Duncan
-* Joe Duffy
-* Kim Hamilton Duffy
-* Gareth Edwards
-* Kirill Elagin
-* Sam Elliott
-* Ricardo Herrmann
-* John Hughes
-* Stephen A. Edwards
-* Eric Eide
-* Gergő Érdi
-* Martín Hötzel Escardó
-* Craig Ferguson
 * Alcides Fonseca
-* Miki Fossati
-* Nate Foster
-* Pedro Furlanetto
-* Cheryl Gach
-* Ben Gamari
-* Gautham Ganapathy
-* Dan Razvan Ghica
-* Sydney Gibson
-* Christian Gill
-* David "Dai" Girardo
-* Matthías Páll Gissurarson
-* Neil Ghani
-* Jeremy Gibbons
-* Andy Gill
-* Harry Goldstein
-* Sebastian Graf
-* Kathy Gray
-* Tim Griffin
-* Robert Grimm
-* Joshua Grosso
-* Finn Espen Gundersen
-* Shaurya Gupta
-* Stefan Holdermans
-* Celeste Hollenbeck
-* Carsten Kehler Holst
-* YL Huang
-* Graham Hutton
-* Samin Ishtiaq
-* Tracey Iwanczuk
-* Michael B James
-* Michal Janočko
-* Ingars Jekabsons
-* Simon Peyton Jones
-* Ohad Kammar
-* Michał Kawalec
-* J Kenneth King
-* Edward Kmett
-* Matthew Kolosick
-* Shriram Krishnamurthi
-* Clemens Kupke
-* Markus Läll
-* Ben Laurie
-* Guy Lemieux
-* Vilem-Benjamin Liepelt
-* Yao Li
-* Slim Lim
-* Sam Lindley
+* Alejandro Serrano
+* Alex Brown
+* Alex Dixon
+* Alex Moreno
+* Alexander Thiemann
+* Alexandra Silva
+* Ali Ahmed
+* Alley Stoughton
 * Andres Löh
-* Lorna Love
-* Peter Lüdemann
-* Georgi Lyubenov
-* Tran Ma
-* Tinks Macdonald
-* Donald MacVicar
-* Anil Madhavapeddy
-* Simon Marlow
-* Erik Meijer
-* Simon Michael
-* Kristopher Micinski
-* Neil Mitchell
-* Jeff Mogul
 * Andrey Mokhov
 * Andy Adams-Moran
-* Alex Moreno
-* Greg Morrisett
-* Jan de Muijnck-Hughes
-* Rolf Neugebauer
-* Palash Nigam
-* Rishiyur Nikhil
-* James Noble
-* Matt Noonan
-* Cyrus Omar
-* Dominic Orchard
-* Katie Ots
-* Qais Patankar
-* Hila Peleg
-* Artem Pelenitsyn
-* Jade Philipoom
-* Dan Piponi
-* Kushal Pisavadia
-* Nadia Polikarpova
-* Nick Pollard
-* Sumera Priyadarsini
-* Claire Quigley
-* Salar Rahmanian
-* Erik Riedel
-* Claudio Russo
-* Paweł Sączawa
-* Vaibhav Sagar
+* Andy Gill
+* Anil Madhavapeddy
+* Annette Bieniusa
 * Armando Santos
-* Alejandro Serrano
-* Cheng Shao
-* Mary Sheeran
-* Jeremy Siek
-* Alexandra Silva
-* Satnam Singh
-* Kartik Singhal
-* Roy Peter D'Souza
-* Susan Spence
-* Don Stewart
-* Alley Stoughton
-* Marty Stumpf
+* Artem Pelenitsyn
+* Aslan Askarov
+* Ben Blaxill
+* Ben Gamari
+* Ben Laurie
+* Benjamin Chetioui
 * Bernard Sufrin
-* Josef Svenningsson
-* Alexander Thiemann
-* Peter Thiemann
-* Marie-Luce Torres
-* Jesse Tov
-* Phil Trinder
-* Pedro Vasconcelos
-* Dimitrios Vytiniotis
-* Stephanie Weirich
-* John Wiegley
-* Uma Zalakain
-* Vladislav Zavialov
-* Steve Zdancewic
-* Irene Yoon
-* Nuda “Tony” Zhang
 * Beta Ziliani
+* Carsten Kehler Holst
+* Celeste Hollenbeck
+* Cheng Shao
+* Cheryl Gach
+* Christian Gill
+* Christopher Brown
+* Claire Quigley
+* Claudio Russo
+* Clemens Kupke
+* Colin Carruthers
+* Craig Ferguson
+* Cyrus Omar
+* Dan Dart
+* Dan Piponi
+* Dan Razvan Ghica
+* Daniil Archangelsky
+* David "Dai" Girardo
+* Derek Dreyer
+* Dimitrios Vytiniotis
+* Dominic Orchard
+* Don Stewart
+* Donald MacVicar
+* Dusty DeWeese
+* Edward Kmett
+* Edwin Brady
+* Eli T. Drumm
+* Eric Eide
+* Erik Meijer
+* Erik Riedel
+* Ezra Cooper
+* Finn Espen Gundersen
+* Francesco Cesarini
+* Gareth Edwards
+* Gautham Ganapathy
+* Georgi Lyubenov
+* Gergő Érdi
+* Graham Hutton
+* Greg Morrisett
+* Guim Caballero
+* Guy Lemieux
+* Harold Carr
+* Harry Goldstein
+* Hila Peleg
+* Ian Duncan
+* Ingars Jekabsons
+* Irene Yoon
+* J Kenneth King
+* Jacques Carette
+* Jade Philipoom
+* James Brock
+* James Chapman
+* James Decker
+* James Noble
+* Jan de Muijnck-Hughes
+* Jeff Mogul
+* Jeremy Gibbons
+* Jeremy Siek
+* Jesse Tov
+* Joachim Breitner
+* Joe Cutler
+* Joe Duffy
+* John Hughes
+* John Wiegley
+* Jonathan Balkind
+* Jose Calderon
+* Josef Svenningsson
+* Joshua Grosso
+* Julian Arni
+* Justin Cormack
+* Justus Adam
+* Kartik Singhal
+* Kathy Gray
+* Katie Ots
+* Kim Hamilton Duffy
+* Kirill Elagin
+* Koen Claessen
+* Kristopher Micinski
+* Kushal Pisavadia
+* Laurence E. Day
+* Lennart Augustsson
+* Liam O'Connor
+* Lorna Love
+* Lucas Dicioccio
+* Marie-Luce Torres
+* Markus Läll
+* Martín Hötzel Escardó
+* Marty Stumpf
+* Mary Sheeran
+* Matt Noonan
+* Matthew Kolosick
+* Matthías Páll Gissurarson
+* Maximilian Algehed
+* Michael B James
+* Michal Janočko
+* Michał Kawalec
+* Miki Fossati
+* Moritz Angermann
+* Nadia Polikarpova
+* Nate Foster
+* Neil Ghani
+* Neil Mitchell
+* Nick Benton
+* Nick Pollard
+* Nikolaj Bjorner
+* Nuda “Tony” Zhang
+* Ohad Kammar
+* Owen Arden
+* Özgür Akgün
+* Palash Nigam
+* Paul Brauner
+* Paweł Sączawa
+* Pedro Furlanetto
+* Pedro Vasconcelos
+* Peter Lüdemann
+* Peter Thiemann
+* Phil Trinder
+* Pierce Darragh
+* Pol Dellaiera
+* Qais Patankar
+* Ricardo Herrmann
+* Richard Careaga
+* Rishiyur Nikhil
+* Robert Grimm
+* Rolf Neugebauer
+* Roy Peter D'Souza
+* Salar Rahmanian
+* Sam Elliott
+* Sam Lindley
+* Samin Ishtiaq
+* Satish Bhatti
+* Satnam Singh
+* Sebastian Graf
+* Shaurya Gupta
+* Shriram Krishnamurthi
+* Siddharth Bhat
+* Simon Marlow
+* Simon Michael
+* Simon Peyton Jones
+* Slim Lim
+* sNathan van Doorn
+* Stefan Holdermans
+* Stephanie Weirich
+* Stephen A. Edwards
+* Stephen Creaney
+* Steve Zdancewic
+* Sumera Priyadarsini
+* Susan Spence
+* Sydney Gibson
+* Thomas Dickerson
+* Thomas M. DuBuisson
+* Thorsten Altenkirch
+* Tim Carstens
+* Tim Griffin
+* Tinks Macdonald
+* Tracey Iwanczuk
+* Tran Ma
+* Uma Zalakain
+* Vaibhav Sagar
+* Vilem-Benjamin Liepelt
+* Vladislav Zavialov
+* Yao Li
+* YL Huang
