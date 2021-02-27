@@ -202,6 +202,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Nikolaj Bjorner
 * Nuda “Tony” Zhang
 * Ohad Kammar
+* Oskar Wickström
 * Owen Arden
 * Özgür Akgün
 * Palash Nigam
@@ -235,7 +236,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Simon Michael
 * Simon Peyton Jones
 * Slim Lim
-* sNathan van Doorn
+* Nathan van Doorn
 * Stefan Holdermans
 * Stephanie Weirich
 * Stephen A. Edwards
