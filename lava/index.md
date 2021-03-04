@@ -1,6 +1,7 @@
 ---
 layout: tech
 title: Lava
+logo: sorter_recursion.jpg
 ---
 # Lava
 

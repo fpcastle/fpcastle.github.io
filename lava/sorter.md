@@ -1,6 +1,7 @@
 ---
 layout: tech
 title: Sorter
+logo: sorter_recursion.jpg
 ---
 ## A Sorter Example in Lava
 
