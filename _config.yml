@@ -13,5 +13,6 @@ twitter:
 image: castle.jpg
 tagline: Hacking Haskell in a Scottish castle
 url: https://fpcastle.com
-author:
-  twitter: satnam6502
+
+author: "Satnam Singh"
+
