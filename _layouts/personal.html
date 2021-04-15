@@ -57,13 +57,11 @@
            FP Castle: <a href="https://fpcastle.com">fpcastle.com</a>
         </p>
 
-<ul>
+<p>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+      <a href="{{ post.url }}">{{ post.title }}</a><br>
   {% endfor %}
-</ul>
+</p>
 
       </header>
 

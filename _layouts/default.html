@@ -44,13 +44,11 @@
         <p>Satnam Singh's webpage: <a href="http://satnam.fpcastle.com">satnam.fpcastle.com</a>
         </p>
 
-<ul>
+<p>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+      <a href="{{ post.url }}">{{ post.title }}</a><br>
   {% endfor %}
-</ul>
+</p>
 
       </header>
       <section>
