@@ -157,6 +157,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Joachim Breitner
 * Joe Cutler
 * Joe Duffy
+* John Azariah
 * John Hughes
 * John Wiegley
 * Jonathan Balkind
