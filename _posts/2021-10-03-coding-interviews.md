@@ -1,6 +1,8 @@
 ---
 layout: personal
 title: Advice for Whiteboard Coding Interviews
+tags:
+  author: satnam_singh
 ---
 I’ve recently done a lot of interviewing as a job applicant, and historically I’ve done a lot of interviewing of candidates myself and also served on Google’s Hiring Committee for software engineers. While this experience is fresh in my mind I thought I would jot down a few words of advice in case it is helpful to anyone else. Let me know!
 
