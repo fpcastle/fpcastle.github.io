@@ -257,6 +257,7 @@ GEM
 PLATFORMS
   x86_64-darwin-18
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   github-pages
@@ -265,4 +266,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.2.3
+   2.2.28
