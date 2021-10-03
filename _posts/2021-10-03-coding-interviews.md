@@ -35,4 +35,4 @@ I’ve recently done a lot of interviewing as a job applicant. Historically I’
 
 **Ask questions**. At the end of the interview you might be asked if you have any questions for the interviewer. It’s safest to ask a banal question like “What do you work on?” or “What is the most rewarding part of your job?”. Avoid negative questions like “What’s the worst aspect of your job?” because you don’t want your interviewer to leave with a negative mindset and then write your interview feedback. 
 
-**Good luck!** Let me know if you found any of this helpful and how you got on in your interviews by commenting on this [Twitter thread](https://twitter.com/satnam6502/status/1444787860704350208.)
+**Good luck!** Let me know if you found any of this helpful and how you got on in your interviews by commenting on this [Twitter thread](https://twitter.com/satnam6502/status/1444787860704350208).
