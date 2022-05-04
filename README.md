@@ -220,6 +220,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Ricardo Herrmann
 * Richard Careaga
 * Rishiyur Nikhil
+* Rob Rix
 * Robert Grimm
 * Rolf Neugebauer
 * Roy Peter D'Souza
