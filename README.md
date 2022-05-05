@@ -214,6 +214,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Peter Lüdemann
 * Peter Thiemann
 * Phil Trinder
+* Philippa Cowderoy
 * Pierce Darragh
 * Pol Dellaiera
 * Qais Patankar
