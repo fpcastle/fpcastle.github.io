@@ -185,6 +185,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Martín Hötzel Escardó
 * Marty Stumpf
 * Mary Sheeran
+* Mariya I. Vasileva
 * Matt Noonan
 * Matthew Kolosick
 * Matthías Páll Gissurarson
