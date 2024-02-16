@@ -203,6 +203,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Nick Benton
 * Nick Pollard
 * Nikolaj Bjorner
+* Noon van der Silk
 * Nuda “Tony” Zhang
 * Ohad Kammar
 * Oskar Wickström
