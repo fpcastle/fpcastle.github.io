@@ -1,5 +1,5 @@
 # Hacking Haskell in a Scottish castle
-At some point I hope to move back to Scotland to start a software company in a castle. We will specialize in using Haskell to write high quality code for discerning customers. Nobody is going to get rich, but a small number of us will have a lot of fun. I am always on the lookout for suitable castles to buy. Until then, here is a placeholder picture of the kind of castle I'd like to be my new HQ. [Oban version.]
+At some point I hope to move back to Scotland to start a software company in a castle. We will specialize in using Haskell to write high quality code for discerning customers. Nobody is going to get rich, but a small number of us will have a lot of fun. I am always on the lookout for suitable castles to buy. Until then, here is a placeholder picture of the kind of castle I'd like to be my new HQ.
 
 ## FAQs
 **Q**: Will there be internet access?  
