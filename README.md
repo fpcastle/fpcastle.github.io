@@ -236,6 +236,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Samin Ishtiaq
 * Satish Bhatti
 * Satnam Singh
+* Sean Parsons
 * Sebastian Graf
 * Shaurya Gupta
 * Shriram Krishnamurthi
