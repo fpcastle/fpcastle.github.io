@@ -234,6 +234,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Sam Elliott
 * Sam Lindley
 * Samin Ishtiaq
+* Sanchayan Maity
 * Satish Bhatti
 * Satnam Singh
 * Sean Parsons
