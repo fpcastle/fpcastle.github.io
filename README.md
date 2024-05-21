@@ -114,6 +114,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Dan Razvan Ghica
 * Daniil Archangelsky
 * David "Dai" Girardo
+* David Tucker
 * Derek Dreyer
 * Dimitrios Vytiniotis
 * Dominic Orchard
