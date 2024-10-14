@@ -257,6 +257,7 @@ Until I get FP Castle formally launched as a company I am accepting "members in 
 * Stephen A. Edwards
 * Stephen Creaney
 * Steve Zdancewic
+* Steven Shaw
 * Sumera Priyadarsini
 * Susan Spence
 * Sydney Gibson
